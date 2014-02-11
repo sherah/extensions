@@ -11,3 +11,10 @@ $wgExtensionCredits['parserhook'][] = array(
 
 $wgAutoloadClasses['FundraisingChart'] = $IP . '/extensions/FundraisingChart/fr_chart_body.php';
 $wgHooks['ParserFirstCallInit'][] = 'FundraisingChart::onParserInit';
+
+$wgResourceModules['ext.fundraisingChart'] = array(
+	'scripts' => array('resources/js/Chart.min.js', 'resources/js/chartFormatHelpers.js', 'resources/js/pieChart.js'),
+	'styles'  => array('resources/css/bootstrap.min.css'),
+	'localBasePath' => __DIR__,
+	'remoteExtPath' => 'FundraisingChart'
+);

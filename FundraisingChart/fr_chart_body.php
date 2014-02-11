@@ -4,7 +4,10 @@ class FundraisingChart {
 		$parser->setHook( 'fundraisingChart', array(__CLASS__, 'frChartRender') );
 	}
 	static function frChartRender( $input, array $args, Parser $parser, PPFrame $frame ) {
-		$ret = '<h1>IT WORKS WOWZERS.</h1>';
+        $parser -> getOutput()->addModules('ext.fundraisingChart');
+
+		$ret  = '<canvas id="pieChart">canvas</canvas>';
+		$ret .= '<div id="pieChartFilter">filter</div>';
 		return $ret;
 	}
 }
