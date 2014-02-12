@@ -13,8 +13,8 @@ $wgAutoloadClasses['FundraisingChart'] = $IP . '/extensions/FundraisingChart/fr_
 $wgHooks['ParserFirstCallInit'][] = 'FundraisingChart::onParserInit';
 
 $wgResourceModules['ext.fundraisingChart'] = array(
-	'scripts' => array('resources/js/Chart.min.js', 'resources/js/chartFormatHelpers.js', 'resources/js/pieChart.js'),
-	'styles'  => array('resources/css/bootstrap.min.css'),
+	'styles'  => array('resources/css/bootstrap.min.css', 'resources/css/style.css'),
+	'scripts' => array('resources/js/underscore.min.js', 'resources/js/Chart.min.js', 'resources/js/chartFormatHelpers.js', 'resources/js/pieChart.js'),
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'FundraisingChart'
 );

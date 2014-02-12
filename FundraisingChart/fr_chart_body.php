@@ -6,8 +6,20 @@ class FundraisingChart {
 	static function frChartRender( $input, array $args, Parser $parser, PPFrame $frame ) {
         $parser -> getOutput()->addModules('ext.fundraisingChart');
 
-		$ret  = '<canvas id="pieChart">canvas</canvas>';
-		$ret .= '<div id="pieChartFilter">filter</div>';
+        $ret  = '<h1>Fundraising Donation Brackets</h1>';
+        $ret .= '<table>';
+
+        $ret .= '<tr>';
+        $ret .= '<td>';
+		$ret .= '<canvas id="pieChart">canvas</canvas>';
+        $ret .= '</td>';
+
+        $ret .= '<td>';
+		$ret .= '<div id="pieChartFilter"></div>';
+        $ret .= '</td>';
+        $ret .= '</tr>';
+
+		$ret .= '</table>';
 		return $ret;
 	}
 }
