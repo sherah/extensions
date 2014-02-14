@@ -22,20 +22,20 @@ $(document).ready(function(){
                       context = $( '#' + id.replace("Area","") ).get( 0 ).getContext( '2d' ),
                       dataSet = [];
 
-                  data.forEach( function( row, i ){
-                      var n = i + 1;
-                      dataSet.push( { value: row.count, color: colorArray[colorArray.length - n] } );
-                      $( '#' + id.replace("Area","") + 'Filter' ).append(
-                          $( '<div>' ).append(
-                                  $( '<div>' )
-                                      .addClass('legendicon')
-                                      .css( 'background-color', colorArray[colorArray.length - n])
-                              ).append(
-                                  $( '<span>' ).text( '$' + row.bracket_max )
-                              )
-                      );
+                      data.forEach( function( row, i ){
+                          var n = i + 1;
+                          dataSet.push( { value: row.count, color: colorArray[colorArray.length - n] } );
+                          $( '#' + id.replace("Area","") + 'Filter' ).append(
+                              $( '<div>' ).append(
+                                      $( '<div>' )
+                                          .addClass('legendicon')
+                                          .css( 'background-color', colorArray[colorArray.length - n])
+                                  ).append(
+                                      $( '<span>' ).text( '$' + row.bracket_max )
+                                  )
+                          );
 
-                  });
+                      });
 
                   new Chart(context).Doughnut(dataSet);
               }

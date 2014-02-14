@@ -1,9 +1,9 @@
-canvas #pieChart {
+canvas .pieCanvas {
     height: 400px;
     width: 400px;
 }
 
-#pieChartFilter {
+.pieFilter {
     font-size: 20px;
 }
 
@@ -14,7 +14,7 @@ canvas #pieChart {
     display: inline;
 }
 
-#pieChartFilter div {
+.pieFilter div {
     padding: 7px;
 }
 

@@ -36,7 +36,7 @@ class FundraisingChart {
             $ret .= '</td>';
 
             $ret .= '<td>';
-            $ret .= '<div id="pieChart' . $title . 'Filter"></div>';
+            $ret .= '<div id="pieChart' . $title . 'Filter" class="pieFilter"></div>';
             $ret .= '</td>';
             $ret .= '</tr>';
 
