@@ -1,37 +1,49 @@
 $(document).ready(function(){
 
-      if($('#pieChartArea').length){
-          var dataSet = $.parseJSON($('#pieChartArea').attr('data-chartdata'));
+      //if there are any pieArea classed areas,
+      //iterate through each one to get their dataSets.
+      //then draw each one.
+      if($('.pieArea').length){
 
-          console.log(dataSet);
-          function drawPieChart( data ) {
+          var ids = _.map($('.pieArea'), function(num){
+              return num.id;
+          });
 
-            var colors = setupColors(),
-            colorArray = _.map( colors, function( n ){
-              return n;
-            }),
-            context = $( '#pieChart' ).get( 0 ).getContext( '2d' ),
-            dataSet = [];
+          ids.forEach(function(id){
 
-            data.forEach( function( row, i ){
-              var n = i + 1;
-              dataSet.push( { value: row.count, color: colorArray[colorArray.length - n] } );
-              $( '#pieChartFilter' ).append(
-                $( '<div>' ).append(
-                    $( '<div>' )
-                      .addClass('legendicon')
-                      .css( 'background-color', colorArray[colorArray.length - n])
-                  ).append(
-                    $( '<span>' ).text( '$' + row.bracket_max )
-                  )
-              );
+              dataSet = $.parseJSON($('#' + id).attr('data-chartdata'));
 
-            });
+              function drawPieChart( data ) {
 
-            new Chart(context).Doughnut(dataSet);
-          }
+                  var colors = setupColors(),
+                      colorArray = _.map( colors, function( n ){
+                          return n;
+                      }),
+                      context = $( '#' + id.replace("Area","") ).get( 0 ).getContext( '2d' ),
+                      dataSet = [];
 
-          drawPieChart(dataSet);
+                  data.forEach( function( row, i ){
+                      var n = i + 1;
+                      dataSet.push( { value: row.count, color: colorArray[colorArray.length - n] } );
+                      $( '#' + id.replace("Area","") + 'Filter' ).append(
+                          $( '<div>' ).append(
+                                  $( '<div>' )
+                                      .addClass('legendicon')
+                                      .css( 'background-color', colorArray[colorArray.length - n])
+                              ).append(
+                                  $( '<span>' ).text( '$' + row.bracket_max )
+                              )
+                      );
+
+                  });
+
+                  new Chart(context).Doughnut(dataSet);
+              }
+
+              drawPieChart(dataSet);
+
+          });
+
       }
 
 });

@@ -4,7 +4,6 @@ class FundraisingChart {
 		$parser->setHook( 'fundraisingChart', array(__CLASS__, 'frChartRender') );
 	}
     static function frChartDataSetFetch( $dataset ){
-        //testing
         $raw_json = file_get_contents($dataset);
         $d = json_decode($raw_json);
 
@@ -18,20 +17,48 @@ class FundraisingChart {
 
 
         if($args['charttype'] === 'pie-chart'){
-            $ret = '<div id="pieChartArea" data-chartdata=' . $dataset . '>';
+
+            //create a unique id for the chart div in case multiple pie charts appear on the same page.
+            $title = str_replace(' ', '', $args['title']);
+
+            //associated chart data goes into its own attribute for javascript to listen to.
+            $ret = '<div id="pieChartArea' . $title . '" class="pieArea" data-chartdata=' . $dataset . '>';
+
             $ret .= '<table class="pieChartTable">';
-            //set the title, which is the first argument given as a tag attribute
+
+            //set title.
+            $ret .= '<tr><td colspan="2"><h1>' . $args['title'] . '</h1></td></tr>';
+
+            $ret .= '<tr>';
+            $ret .= '<td>';
+
+            $ret .= '<canvas id="pieChart' . $title . '" class="pieCanvas" height="350" width="350" margin-right="10"></canvas>';
+            $ret .= '</td>';
+
+            $ret .= '<td>';
+            $ret .= '<div id="pieChart' . $title . 'Filter"></div>';
+            $ret .= '</td>';
+            $ret .= '</tr>';
+
+            $ret .= '</table>';
+            $ret .= '</div>'; //close the chart type area.
+
+        }
+        if($args['charttype'] === 'bar-chart'){
+            $ret = '<div id="barChartArea" data-chartdata=' . $dataset . '>';
+            $ret .= '<table class="barChartTable">';
+
             $ret .= '<tr><td colspan="2"><h1>' . $args['title'] . '</h1></td></tr>';
 
             $ret .= '<tr>';
             $ret .= '<td>';
 
             //todo: fix chart id clashing possibility by passing in indexes or something
-            $ret .= '<canvas id="pieChart" height="350" width="350" margin-right="10"></canvas>';
+            $ret .= '<canvas id="barChart" height="350" width="650" margin-right="10"></canvas>';
             $ret .= '</td>';
 
             $ret .= '<td>';
-            $ret .= '<div id="pieChartFilter"></div>';
+            $ret .= '<div id="barChartFilter"></div>';
             $ret .= '</td>';
             $ret .= '</tr>';
 
@@ -39,7 +66,13 @@ class FundraisingChart {
             $ret .= '</div>'; //close the chart type area.
         }
 
-
 		return $ret;
 	}
 }
+
+//Usage for the tag <fundraisingChart />:
+
+//charttype: pie-chart, line-chart, or bar-chart
+//dataset:   a URL or URI that provides the JSON in the correct format for the chart.
+    //todo: (provide documentation regarding correct formats for each.)
+//title:     the title that will display at the top of this chart.
