@@ -44,21 +44,27 @@ class FundraisingChart {
             $ret .= '</div>'; //close the chart type area.
 
         }
+        //todo: this.
         if($args['charttype'] === 'bar-chart'){
-            $ret = '<div id="barChartArea" data-chartdata=' . $dataset . '>';
+            //create a unique id for the chart div in case multiple bar charts appear on the same page.
+            $title = str_replace(' ', '', $args['title']);
+
+            //associated chart data goes into its own attribute for javascript to listen to.
+            $ret = '<div id="barChartArea' . $title . '" class="barArea" data-chartdata=' . $dataset . '>';
+
             $ret .= '<table class="barChartTable">';
 
+            //set title.
             $ret .= '<tr><td colspan="2"><h1>' . $args['title'] . '</h1></td></tr>';
 
             $ret .= '<tr>';
             $ret .= '<td>';
 
-            //todo: fix chart id clashing possibility by passing in indexes or something
-            $ret .= '<canvas id="barChart" height="350" width="650" margin-right="10"></canvas>';
+            $ret .= '<canvas id="barChart' . $title . '" class="barCanvas" height="350" width="350" margin-right="10"></canvas>';
             $ret .= '</td>';
 
             $ret .= '<td>';
-            $ret .= '<div id="barChartFilter"></div>';
+            $ret .= '<div id="barChart' . $title . 'Filter" class="barFilter"></div>';
             $ret .= '</td>';
             $ret .= '</tr>';
 

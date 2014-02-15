@@ -22,6 +22,8 @@ $(document).ready(function(){
                       context = $( '#' + id.replace("Area","") ).get( 0 ).getContext( '2d' ),
                       dataSet = [];
 
+                      //todo: fix the fact that these colors run out. do a check on which array index
+                      //was last used for color and then use the next one unless it's the last (first)
                       data.forEach( function( row, i ){
                           var n = i + 1;
                           dataSet.push( { value: row.count, color: colorArray[colorArray.length - n] } );
