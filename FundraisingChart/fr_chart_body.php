@@ -46,10 +46,9 @@ class FundraisingChart {
         }
         //todo: this.
         if($args['charttype'] === 'bar-chart'){
-            //create a unique id for the chart div in case multiple bar charts appear on the same page.
+
             $title = str_replace(' ', '', $args['title']);
 
-            //associated chart data goes into its own attribute for javascript to listen to.
             $ret = '<div id="barChartArea' . $title . '" class="barArea" data-chartdata=' . $dataset . '>';
 
             $ret .= '<table class="barChartTable">';
@@ -60,7 +59,7 @@ class FundraisingChart {
             $ret .= '<tr>';
             $ret .= '<td>';
 
-            $ret .= '<canvas id="barChart' . $title . '" class="barCanvas" height="350" width="350" margin-right="10"></canvas>';
+            $ret .= '<canvas id="barChart' . $title . '" class="barCanvas" height="400" width="650" margin-right="10"></canvas>';
             $ret .= '</td>';
 
             $ret .= '<td>';
@@ -69,7 +68,33 @@ class FundraisingChart {
             $ret .= '</tr>';
 
             $ret .= '</table>';
-            $ret .= '</div>'; //close the chart type area.
+            $ret .= '</div>';
+        }
+        //todo: this.
+        if($args['charttype'] === 'line-chart'){
+
+            $title = str_replace(' ', '', $args['title']);
+
+            $ret = '<div id="lineChartArea' . $title . '" class="lineArea" data-chartdata=' . $dataset . '>';
+
+            $ret .= '<table class="lineChartTable">';
+
+            //set title.
+            $ret .= '<tr><td colspan="2"><h1>' . $args['title'] . '</h1></td></tr>';
+
+            $ret .= '<tr>';
+            $ret .= '<td>';
+
+            $ret .= '<canvas id="lineChart' . $title . '" class="lineCanvas" height="400" width="650" margin-right="10"></canvas>';
+            $ret .= '</td>';
+
+            $ret .= '<td>';
+            $ret .= '<div id="lineChart' . $title . 'Filter" class="lineFilter"></div>';
+            $ret .= '</td>';
+            $ret .= '</tr>';
+
+            $ret .= '</table>';
+            $ret .= '</div>';
         }
 
 		return $ret;
