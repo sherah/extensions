@@ -4,82 +4,60 @@
  * user-defined JSON data in
  */
 
-    var checkdataSetFormat;
+ var setupBarCharts = function(){
+    
+    var formatData = function(set){
 
-    if($('barArea').length){
+        //pass in json that contains the chart data needing to be expressed:
+        //follow this convention:
+        //
+        //data = [
+        //   x-axis: [specify a column],
+        //   y-axis: [specify a column],
+        //   json: {all the json}
+        // ]
+
+        //test data
+        var data = {
+            labels : ["January","February","March","April","May","June","July"],
+            datasets : [
+                {
+                    fillColor : "rgba(220,220,220,0.5)",
+                    strokeColor : "rgba(220,220,220,1)",
+                    pointColor : "rgba(220,220,220,1)",
+                    pointStrokeColor : "#fff",
+                    data : [65,59,90,81,56,55,40]
+                },
+                {
+                    fillColor : "rgba(151,187,205,0.5)",
+                    strokeColor : "rgba(151,187,205,1)",
+                    pointColor : "rgba(151,187,205,1)",
+                    pointStrokeColor : "#fff",
+                    data : [28,48,40,19,96,27,100]
+                }
+            ]
+        }
+
+        return data;
+    };
+
+    if($('.barArea').length){
 
         var ids = _.map($('.barArea'), function(num){
-            return num.id;
-        }),
-            months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-        ids.forEach(function(id){
-
-            var dataSet = $.parseJSON($('#' + id).attr('data-chartdata')),
-
-            //check the dataSet's format and proceed accordingly
-            format = checkdataSetFormat(dataSet);
-
-            //known chart types will have their data checked.
-            //otherwise, the user must include data formatted a certain JSONy way.
-            //first iteration: mediums and methods charts (since I already built them).
-            if( format === 'mediumChart' || format === 'methodChart'){
-                _.each(dataSet, function(row){
-                    if(!dataSet[row.date]){
-                        dataSet[row.date] = [ row ];
-                    }else{
-                        dataSet[row.date].push(row);
-                    }
-                });
-
-                //get data into the proper format
-                var monthDataArraysObj = {};
-                for(holder in dataSet){
-                    var dayObj = dataSet[holder];
-                    for (key in dayObj){
-                        var d = dayObj[key]['date'];
-                        var c = dayObj[key]['count'];
-
-                        if(!dayObj[key]['utm_medium']){
-                            var m = "Other";
-                        } else {
-                            var m = dayObj[key]['utm_medium'];
-                        }
-
-                        var mm = parseInt( moment(d).format('M') ) - 1;
-                        if(monthDataArraysObj['month' + mm]){
-                            if(monthDataArraysObj['month' + mm][m]){
-                                monthDataArraysObj['month' + mm][m].push([d.format('D'), c]);
-                            } else {
-                                monthDataArraysObj['month' + mm][m] = {};
-                                monthDataArraysObj['month' + mm][m] = [ [d.format('D'), c] ];
-                            }
-
-                        } else {
-                            monthDataArraysObj['month' + mm] = {};
-                            monthDataArraysObj['month' + mm][m] = {};
-                            monthDataArraysObj['month' + mm][m] = [ [d.format('D'), c] ];
-                        }
-
-                    }
-                }
-
-            var megaArray = _.map(monthDataArraysObj, function(d){
-                keyObjs = [];
-                for( key in d ){
-                    keyObjs.push({ label: key, data: d[key] });
-                }
-                return keyObjs;
+                return num.id;
             });
 
-            } else {
-                //todo: generic chart
-            }
+        ids.forEach(function(el_id){
+
+            var dataSet = $.parseJSON($('#' + el_id).attr('data-chartdata')),
+                //check the dataSet's format and proceed accordingly
+                formattedData = formatData(dataSet),
+                context = $( '#' + el_id.replace("Area","") ).get( 0 ).getContext( '2d' );
+
+                new Chart(context).Bar(formattedData);
+
         });
     }
 
-    checkdataSetFormat = function(set){
-        //just testing.
-        return 'mediumChart';
-    };
 
+}

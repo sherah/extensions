@@ -1,9 +1,9 @@
-canvas .pieCanvas {
+canvas .pieCanvas, canvas .barCanvas {
     height: 400px;
     width: 400px;
 }
 
-.pieFilter {
+.pieFilter, .barFilter {
     font-size: 20px;
 }
 
@@ -14,15 +14,15 @@ canvas .pieCanvas {
     display: inline;
 }
 
-.pieFilter div {
+.pieFilter div, .barFilter div {
     padding: 7px;
 }
 
-.pieChartTable td {
+.pieChartTable td, .barChartTable td {
     padding: 0 20px 20px 20px;
 }
 
-.pieChartTable {
+.pieChartTable, .barChartTable {
     background-color: #f5f5f5;
     border-radius: 10px;
 }

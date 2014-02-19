@@ -44,7 +44,6 @@ class FundraisingChart {
             $ret .= '</div>'; //close the chart type area.
 
         }
-        //todo: this.
         if($args['charttype'] === 'bar-chart'){
 
             $title = str_replace(' ', '', $args['title']);
