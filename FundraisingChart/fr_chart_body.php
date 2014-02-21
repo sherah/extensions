@@ -13,7 +13,12 @@ class FundraisingChart {
         $parser -> getOutput()->addModules('ext.fundraisingChart');
 
         //according to the specified chart type, validate and present specified dataSet.
-        $dataset = FundraisingChart::frChartDataSetFetch( $args['dataset'] );
+        //testing:
+        if($args['dataset'] !== 'blah'){
+            $dataset = FundraisingChart::frChartDataSetFetch( $args['dataset'] );
+        }else{
+            $dataset = "nothing";
+        };
 
 
         if($args['charttype'] === 'pie-chart'){
