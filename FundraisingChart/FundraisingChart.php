@@ -15,7 +15,8 @@ $wgHooks['ParserFirstCallInit'][] = 'FundraisingChart::onParserInit';
 $wgResourceModules['ext.fundraisingChart'] = array(
 	'styles'  => array('resources/css/bootstrap.min.css', 'resources/css/style.css'),
 	'scripts' => array('resources/js/underscore.min.js', 'resources/js/Chart.min.js',
-        'resources/js/chartFormatHelpers.js', 'resources/js/pieChart.js', 'resources/js/barChart.js', 'resources/js/fr_chart.js'),
+        'resources/js/chartFormatHelpers.js', 'resources/js/pieChart.js', 'resources/js/barChart.js',
+        'resources/js/lineChart.js', 'resources/js/fr_chart.js'),
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'FundraisingChart'
 );

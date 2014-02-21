@@ -4,4 +4,6 @@
 $(document).ready(function(){
     setupPieCharts();
     setupBarCharts();
+    setupLineCharts();
+    setupMapCharts();
 });

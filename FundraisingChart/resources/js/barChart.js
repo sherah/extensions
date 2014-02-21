@@ -5,7 +5,7 @@
  */
 
  var setupBarCharts = function(){
-    
+
     var formatData = function(set){
 
         //pass in json that contains the chart data needing to be expressed:
@@ -36,6 +36,11 @@
                     data : [28,48,40,19,96,27,100]
                 }
             ]
+        }
+
+        var set_data = {
+            labels : set.labels,
+            datasets : set.json
         }
 
         return data;

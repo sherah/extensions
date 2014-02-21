@@ -70,6 +70,32 @@ class FundraisingChart {
             $ret .= '</div>';
         }
         //todo: this.
+        if($args['charttype'] === 'map-chart'){
+
+            $title = str_replace(' ', '', $args['title']);
+
+            $ret = '<div id="mapChartArea' . $title . '" class="mapArea" data-chartdata=' . $dataset . '>';
+
+            $ret .= '<table class="mapChartTable">';
+
+            //set title.
+            $ret .= '<tr><td colspan="2"><h1>' . $args['title'] . '</h1></td></tr>';
+
+            $ret .= '<tr>';
+            $ret .= '<td>';
+
+            $ret .= '<canvas id="mapChart' . $title . '" class="mapCanvas" height="400" width="650" margin-right="10"></canvas>';
+            $ret .= '</td>';
+
+            $ret .= '<td>';
+            $ret .= '<div id="mapChart' . $title . 'Filter" class="mapFilter"></div>';
+            $ret .= '</td>';
+            $ret .= '</tr>';
+
+            $ret .= '</table>';
+            $ret .= '</div>';
+        }
+        //todo: this.
         if($args['charttype'] === 'line-chart'){
 
             $title = str_replace(' ', '', $args['title']);
