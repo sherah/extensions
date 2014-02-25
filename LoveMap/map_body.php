@@ -14,7 +14,7 @@ class LoveMap {
         $parser -> getOutput()->addModules('ext.loveMap');
 
         $ret  = '<h1>Fundraising Love Map</h1>';
-        $ret .= '<div id="loveMapArea"</div>';
+        $ret .= '<div id="loveMapArea"></div>';
 
         return $ret;
     }

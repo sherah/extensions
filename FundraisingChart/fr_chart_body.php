@@ -74,33 +74,16 @@ class FundraisingChart {
             $ret .= '</table>';
             $ret .= '</div>';
         }
-        //todo: this.
         if($args['charttype'] === 'map-chart'){
 
             $title = str_replace(' ', '', $args['title']);
 
             $ret = '<div id="mapChartArea' . $title . '" class="mapArea" data-chartdata=' . $dataset . '>';
 
-            $ret .= '<table class="mapChartTable">';
-
             //set title.
-            $ret .= '<tr><td colspan="2"><h1>' . $args['title'] . '</h1></td></tr>';
-
-            $ret .= '<tr>';
-            $ret .= '<td>';
-
-            $ret .= '<canvas id="mapChart' . $title . '" class="mapCanvas" height="400" width="650" margin-right="10"></canvas>';
-            $ret .= '</td>';
-
-            $ret .= '<td>';
-            $ret .= '<div id="mapChart' . $title . 'Filter" class="mapFilter"></div>';
-            $ret .= '</td>';
-            $ret .= '</tr>';
-
-            $ret .= '</table>';
+            $ret .= '<h1>' . $args['title'] . '</h1></td></tr>';
             $ret .= '</div>';
         }
-        //todo: this.
         if($args['charttype'] === 'line-chart'){
 
             $title = str_replace(' ', '', $args['title']);
@@ -134,6 +117,11 @@ class FundraisingChart {
 //Usage for the tag <fundraisingChart />:
 
 //charttype: pie-chart, line-chart, or bar-chart
-//dataset:   a URL or URI that provides the JSON in the correct format for the chart.
-    //todo: (provide documentation regarding correct formats for each.)
-//title:     the title that will display at the top of this chart.
+//dataset: a URL or URI that provides the JSON in the correct format for the chart.
+    //the formats:
+        //pie-chart: json with count, uses the "count" field to generate the pie slices. so use counts.
+            //make sure each count is sorted by month.
+        //bar-chart: json with date x-axis and total y-axis.
+        //line-chart: json with date x-axis and total y-axis.
+        //map-chart: json map data in the datamaps format, usually with fillColor and associated data.
+//title: the title that will display at the top of this chart.

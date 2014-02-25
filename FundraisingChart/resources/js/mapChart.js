@@ -11,7 +11,7 @@ var setupMapCharts = function(){
 
                 element: document.getElementById(el_id),
 
-                projection: 'mercator',
+                data: $(el_id).attr('data-chartdata'),
 
                 fills: {
                     gray   : '#4D4D4D',
@@ -41,18 +41,6 @@ var setupMapCharts = function(){
                     highlightBorderColor: 'rgba(255,255,255,0.4)',
                     highlightBorderWidth: 1
 
-                },
-
-                //this is the format for the data.
-                data: {
-                    USA: {
-                        fillKey: 'blue',
-                        numberOfThings: 10381,
-                        stories: [
-                            'This is a story!',
-                            'This is another story.'
-                        ]
-                    }
                 }
 
             });

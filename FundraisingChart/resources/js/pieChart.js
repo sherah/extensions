@@ -19,7 +19,7 @@ var setupPieCharts = function(){
                     colorArray = _.map( colors, function( n ){
                         return n;
                     }),
-                    context = $( '#' + id.replace("Area","") ).get( 0 ).getContext( '2d' ),
+                    context = $( '#' + id.replace( "Area","") ).get( 0 ).getContext( '2d' ),
                     dataSet = [];
 
                 //todo: fix the fact that these colors run out. do a check on which array index

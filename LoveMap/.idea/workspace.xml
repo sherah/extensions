@@ -34,10 +34,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="332" column="49" selection-start="7302" selection-end="7302" vertical-scroll-proportion="0.65384614" vertical-offset="4385" max-vertical-offset="5295">
+            <state line="277" column="129" selection-start="7040" selection-end="7040" vertical-scroll-proportion="-19.153847" vertical-offset="3657" max-vertical-offset="5685">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="datamaps.world.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/js/datamaps.world.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="29" selection-start="1104" selection-end="1104" vertical-scroll-proportion="-3.6956522" vertical-offset="3780" max-vertical-offset="9255">
               <folding />
             </state>
           </provider>
@@ -46,7 +55,7 @@
       <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+            <state line="3" column="23" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
               <folding />
             </state>
           </provider>
@@ -55,7 +64,7 @@
       <file leaf-file-name="map_body.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/map_body.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="14" selection-start="401" selection-end="401" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="390">
+            <state line="16" column="38" selection-start="474" selection-end="474" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="390">
               <folding>
                 <element signature="e#6#93#0" expanded="true" />
               </folding>
@@ -73,12 +82,13 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/map_body.php" />
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/datamaps.world.js" />
         <option value="$PROJECT_DIR$/d3.v3.min.js" />
         <option value="$PROJECT_DIR$/topojson.js" />
         <option value="$PROJECT_DIR$/LoveMap.php" />
+        <option value="$PROJECT_DIR$/map_body.php" />
+        <option value="$PROJECT_DIR$/resources/css/style.css" />
         <option value="$PROJECT_DIR$/resources/js/main.js" />
       </list>
     </option>
@@ -209,7 +219,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14010343" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29233226" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.124068156" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -248,25 +258,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/datamaps.world.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="552" column="0" selection-start="111724" selection-end="111724" vertical-scroll-proportion="8.970748" vertical-offset="0" max-vertical-offset="9255">
-          <folding>
-            <marker date="1392924195000" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/topojson.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="458" column="0" selection-start="15697" selection-end="15697" vertical-scroll-proportion="0.96794873" vertical-offset="5964" max-vertical-offset="6960">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="936">
           <folding />
         </state>
       </provider>
@@ -280,9 +274,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="23" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/map_body.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="14" selection-start="401" selection-end="401" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="390">
+        <state line="16" column="38" selection-start="474" selection-end="474" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="390">
           <folding>
             <element signature="e#6#93#0" expanded="true" />
           </folding>
@@ -291,7 +292,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="332" column="49" selection-start="7302" selection-end="7302" vertical-scroll-proportion="0.65384614" vertical-offset="4385" max-vertical-offset="5295">
+        <state line="277" column="129" selection-start="7040" selection-end="7040" vertical-scroll-proportion="-19.153847" vertical-offset="3657" max-vertical-offset="5685">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/datamaps.world.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="29" selection-start="1104" selection-end="1104" vertical-scroll-proportion="-3.6956522" vertical-offset="3780" max-vertical-offset="9255">
           <folding />
         </state>
       </provider>
