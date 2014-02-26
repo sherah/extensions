@@ -120,7 +120,7 @@ class FundraisingChart {
     //the formats:
         //pie-chart:  json with count, uses the "count" field to generate the pie slices. so use counts.
                       //make sure each count is sorted by month.
-        //bar-chart:  json with date x-axis and total y-axis.
+        //bar-chart:  json with 'date' x-axis and 'count' y-axis.
         //line-chart: json with date x-axis and total y-axis.
         //map-chart:  json map data in the datamaps format, usually with fillColor and associated data.
 //title: the title that will display at the top of this chart.
