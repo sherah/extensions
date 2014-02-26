@@ -10,11 +10,24 @@
 
         var datapoints = _.map(set, function(row){
             return row.count;
+        }),
+        bardata,
+        dateAgg = {};
+
+        set.forEach(function(row){
+            var d = row.date.slice(0,10);
+            if(!dateAgg[moment(d).format('M')]){
+                dateAgg[moment(d).format('M')] = parseInt(row.count);
+            }else{
+                dateAgg[moment(d).format('M')] += parseInt(row.count);
+            }
         });
 
-        console.log(datapoints);
-        //test data
-        var data = {
+        bardata = _.map(dateAgg, function(n){
+            return n;
+        });
+
+        return {
             labels : ["January","February","March","April","May","June","July","August","September","October","November","December"],
             datasets : [
                 {
@@ -22,12 +35,11 @@
                     strokeColor : "rgba(220,220,220,1)",
                     pointColor : "rgba(220,220,220,1)",
                     pointStrokeColor : "#fff",
-                    data : datapoints
+                    data : bardata
                 }
             ]
         }
 
-        return data;
     };
 
     if($('.barArea').length){

@@ -20,7 +20,6 @@ class FundraisingChart {
             $dataset = "nothing";
         };
 
-
         if($args['charttype'] === 'pie-chart'){
 
             //create a unique id for the chart div in case multiple pie charts appear on the same page.
@@ -117,11 +116,11 @@ class FundraisingChart {
 //Usage for the tag <fundraisingChart />:
 
 //charttype: pie-chart, line-chart, or bar-chart
-//dataset: a URL or URI that provides the JSON in the correct format for the chart.
+//dataset: a URL that provides the JSON in the correct format for the chart.
     //the formats:
-        //pie-chart: json with count, uses the "count" field to generate the pie slices. so use counts.
-            //make sure each count is sorted by month.
-        //bar-chart: json with date x-axis and total y-axis.
+        //pie-chart:  json with count, uses the "count" field to generate the pie slices. so use counts.
+                      //make sure each count is sorted by month.
+        //bar-chart:  json with date x-axis and total y-axis.
         //line-chart: json with date x-axis and total y-axis.
-        //map-chart: json map data in the datamaps format, usually with fillColor and associated data.
+        //map-chart:  json map data in the datamaps format, usually with fillColor and associated data.
 //title: the title that will display at the top of this chart.
