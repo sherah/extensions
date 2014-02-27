@@ -12,9 +12,7 @@ class FundraisingChart {
 	static function frChartRender( $input, array $args, Parser $parser, PPFrame $frame ) {
         $parser -> getOutput()->addModules('ext.fundraisingChart');
 
-        //according to the specified chart type, validate and present specified dataSet.
-        //testing:
-        if($args['dataset'] !== 'blah'){
+        if($args['dataset']){
             $dataset = FundraisingChart::frChartDataSetFetch( $args['dataset'] );
         }else{
             $dataset = "nothing";
@@ -78,6 +76,7 @@ class FundraisingChart {
             $title = str_replace(' ', '', $args['title']);
 
             $ret = '<div id="mapChartArea' . $title . '" class="mapArea" data-chartdata=' . $dataset . '>';
+            $ret .= '<p>' . $dataset . 'data </p>';
 
             //set title.
             $ret .= '<h1>' . $args['title'] . '</h1></td></tr>';

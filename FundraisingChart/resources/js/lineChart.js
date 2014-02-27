@@ -1,7 +1,5 @@
 /**
  * Created by sherahsmith on 2/18/14.
- * Uses the jQuery flot chart library to create line charts based on
- * user-defined JSON data in
  */
 
 var setupLineCharts = function(){

@@ -6,7 +6,7 @@ var setupMapCharts = function(){
         });
 
         ids.forEach(function(el_id){
-
+            console.log($(el_id).attr('data-chartdata'));
             var map = new Datamap({
 
                 element: document.getElementById(el_id),
@@ -33,7 +33,6 @@ var setupMapCharts = function(){
                     borderColor: '#FDFDFD',
                     popupOnHover: true,
                     popupTemplate: function(geography, data) {
-                        //+ data.stories[Math.floor(Math.random() * data.stories.length)]
                         return '<div class="hoverinfo"><strong>' + geography.properties.name + '</strong></div>';
                     },
                     highlightOnHover: true,

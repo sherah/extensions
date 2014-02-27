@@ -1,7 +1,5 @@
 /**
  * Created by sherahsmith on 2/18/14.
- * Uses the jQuery flot chart library to create bar charts based on
- * user-defined JSON data in
  */
 
  var setupBarCharts = function(){
