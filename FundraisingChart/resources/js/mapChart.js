@@ -1,3 +1,9 @@
+
+
+//todo: refactor into cloropleth with color scale (or at least have support for it)
+//todo: think about writing these charts as jquery extensions (talk to Roan about jquery extensions)
+//todo: fix spacings
+//todo: lint
 var setupMapCharts = function(){
 
     if($('.mapArea').length){
@@ -13,6 +19,7 @@ var setupMapCharts = function(){
 
                 data: $(el_id).attr('data-chartdata'),
 
+                //todo: fix this
                 fills: {
                     gray   : '#4D4D4D',
                     blue   : '#5DA5DA',

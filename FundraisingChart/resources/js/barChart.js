@@ -2,6 +2,9 @@
  * Created by sherahsmith on 2/18/14.
  */
 
+
+ //todo: create generally more descriptive function names throughout
+//todo: talk to design team about branding consistency for these charts.
  var setupBarCharts = function(){
 
     var formatData = function(set){
@@ -12,6 +15,7 @@
         bardata,
         dateAgg = {};
 
+        //todo: get the labels dynamically
         set.forEach(function(row){
             var d = row.date.slice(0,10);
             if(!dateAgg[moment(d).format('M')]){
@@ -26,6 +30,7 @@
         });
 
         return {
+            //replace these labels
             labels : ["January","February","March","April","May","June","July","August","September","October","November","December"],
             datasets : [
                 {
@@ -51,7 +56,7 @@
             var dataSet = $.parseJSON($('#' + el_id).attr('data-chartdata')),
                 //check the dataSet's format and proceed accordingly
                 formattedData = formatData(dataSet),
-                context = $( '#' + el_id.replace("Area","") ).get( 0 ).getContext( '2d' );
+                context = $( '#' + el_id.replace('Area','') ).get( 0 ).getContext( '2d' );
 
                 new Chart(context).Bar(formattedData);
 
