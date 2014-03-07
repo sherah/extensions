@@ -31,7 +31,7 @@
  * line-chart: json with date x-axis and total y-axis.
  * map-chart:  json map data in the datamaps format, usually with fillColor and associated data.
  * title: the title that will display at the top of this chart.
- * 
+ *
  */
 class FundraisingChart {
     static function onParserInit( Parser $parser ) {
