@@ -23,3 +23,7 @@ $wgResourceModules['ext.loveMap'] = array(
     'localBasePath' => __DIR__,
     'remoteExtPath' => 'LoveMap'
 );
+
+$wgResourceModules['ext.loveMap.d3'] = array(
+
+);

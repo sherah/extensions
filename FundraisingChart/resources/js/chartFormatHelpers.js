@@ -15,3 +15,4 @@ function setupColors() {
 
   return colors;
 }
+

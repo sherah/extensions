@@ -1,6 +1,7 @@
 /**
  * Created by sherahsmith on 2/20/14.
  */
+
 var map = new Datamap({
 
     element: document.getElementById('loveMapArea'),
