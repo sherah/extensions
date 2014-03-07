@@ -35,7 +35,19 @@
       <file leaf-file-name="fr_chart_body.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fr_chart_body.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.7459016" vertical-offset="1278" max-vertical-offset="2010">
+            <state line="33" column="3" selection-start="1205" selection-end="1205" vertical-scroll-proportion="-0.48498333" vertical-offset="931" max-vertical-offset="1830">
+              <folding>
+                <element signature="e#6#557#0" expanded="true" />
+                <marker date="1394214728000" expanded="true" signature="3176:3208" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
               <folding />
             </state>
           </provider>
@@ -44,7 +56,7 @@
       <file leaf-file-name="FundraisingChart.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FundraisingChart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="555">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="540">
               <folding />
             </state>
           </provider>
@@ -62,7 +74,7 @@
       <file leaf-file-name="fundraising_charts.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/fundraising_charts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="179" column="4" selection-start="6225" selection-end="6225" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2805">
+            <state line="40" column="23" selection-start="1803" selection-end="1803" vertical-scroll-proportion="-23.076923" vertical-offset="0" max-vertical-offset="2805">
               <folding />
             </state>
           </provider>
@@ -106,8 +118,8 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1440" />
-    <option name="height" value="874" />
+    <option name="width" value="1478" />
+    <option name="height" value="1054" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -135,67 +147,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Problems" />
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="FundraisingChart">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="FundraisingChart">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="FundraisingChart">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="FundraisingChart">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT=".idea">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -248,6 +199,71 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FundraisingChart">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FundraisingChart">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="js">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FundraisingChart">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="resources">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="css">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="FundraisingChart">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT=".idea">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -317,7 +333,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="874" extended-state="0" />
+    <frame x="0" y="22" width="1478" height="1054" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -325,7 +341,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18955651" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18662953" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962963" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -355,9 +371,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11821086" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -381,8 +397,42 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/fr_chart_body.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="2" selection-start="675" selection-end="746" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="2280">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="1278" max-vertical-offset="2010">
+          <folding>
+            <element signature="e#6#557#0" expanded="true" />
+            <marker date="1394214728000" expanded="true" signature="3176:3208" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FundraisingChart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/chartFormatHelpers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/fundraising_charts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="179" column="4" selection-start="6225" selection-end="6225" vertical-scroll-proportion="0.0" vertical-offset="2685" max-vertical-offset="2805">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fr_chart_body.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="2" selection-start="675" selection-end="746" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="2280">
+          <folding>
+            <element signature="e#6#557#0" expanded="true" />
+            <marker date="1394214728000" expanded="true" signature="3176:3208" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -427,7 +477,10 @@
     <entry file="file://$PROJECT_DIR$/fr_chart_body.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="42" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0" vertical-offset="168" max-vertical-offset="1710">
-          <folding />
+          <folding>
+            <element signature="e#6#557#0" expanded="true" />
+            <marker date="1394214728000" expanded="true" signature="3176:3208" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -451,7 +504,10 @@
     <entry file="file://$PROJECT_DIR$/fr_chart_body.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="42" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0" vertical-offset="168" max-vertical-offset="1710">
-          <folding />
+          <folding>
+            <element signature="e#6#557#0" expanded="true" />
+            <marker date="1394214728000" expanded="true" signature="3176:3208" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -475,7 +531,10 @@
     <entry file="file://$PROJECT_DIR$/fr_chart_body.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="42" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="1245">
-          <folding />
+          <folding>
+            <element signature="e#6#557#0" expanded="true" />
+            <marker date="1394214728000" expanded="true" signature="3176:3208" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -499,7 +558,10 @@
     <entry file="file://$PROJECT_DIR$/fr_chart_body.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="42" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1710">
-          <folding />
+          <folding>
+            <element signature="e#6#557#0" expanded="true" />
+            <marker date="1394214728000" expanded="true" signature="3176:3208" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -523,7 +585,10 @@
     <entry file="file://$PROJECT_DIR$/fr_chart_body.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="42" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1710">
-          <folding />
+          <folding>
+            <element signature="e#6#557#0" expanded="true" />
+            <marker date="1394214728000" expanded="true" signature="3176:3208" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -547,7 +612,10 @@
     <entry file="file://$PROJECT_DIR$/fr_chart_body.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="42" selection-start="469" selection-end="469" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1335">
-          <folding />
+          <folding>
+            <element signature="e#6#557#0" expanded="true" />
+            <marker date="1394214728000" expanded="true" signature="3176:3208" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -590,21 +658,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="1" selection-start="474" selection-end="474" vertical-scroll-proportion="0.49785867" vertical-offset="0" max-vertical-offset="934">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/Chart.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="923" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/fundraising_charts.js">
+    <entry file="file://$PROJECT_DIR$/FundraisingChart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="4" selection-start="6225" selection-end="6225" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2805">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="555">
           <folding />
         </state>
       </provider>
@@ -616,17 +677,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FundraisingChart.php">
+    <entry file="file://$PROJECT_DIR$/resources/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="555">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="936">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/fundraising_charts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="23" selection-start="1803" selection-end="1803" vertical-scroll-proportion="-23.076923" vertical-offset="0" max-vertical-offset="2805">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fr_chart_body.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.7459016" vertical-offset="1278" max-vertical-offset="2010">
-          <folding />
+        <state line="33" column="3" selection-start="1205" selection-end="1205" vertical-scroll-proportion="-0.48498333" vertical-offset="931" max-vertical-offset="1830">
+          <folding>
+            <element signature="e#6#557#0" expanded="true" />
+            <marker date="1394214728000" expanded="true" signature="3176:3208" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
