@@ -34,6 +34,7 @@
  *
  */
 class FundraisingChart {
+
     static function onParserInit( Parser $parser ) {
         $parser->setHook( 'fundraisingChart', array(__CLASS__, 'frChartRender') );
     }
@@ -62,6 +63,7 @@ class FundraisingChart {
      * @return string
      */
     static function frChartRender( $input, array $args, Parser $parser, PPFrame $frame ) {
+
         $parser -> getOutput()->addModules('ext.fundraisingChart');
 
         if($args['dataset']){
@@ -70,45 +72,88 @@ class FundraisingChart {
             $dataset = "nothing";
         };
 
+        //create unique title
+        $title = str_replace(' ', '', $args['title']);
+        //get/strip the chart type
         $chartStyle = substr($args['charttype'], 0, -6);
+
         if($chartStyle !== 'map') {
-            //create a unique id for the chart div in case multiple pie charts appear on the same page.
-            $title = str_replace(' ', '', $args['title']);
 
             //associated chart data goes into its own attribute for javascript to listen to.
-            $ret = '<div id="' . $chartStyle . 'ChartArea' . $title . '" class="' . $chartStyle . 'Area" data-chartdata=' . $dataset . '>';
+            $ret = Html::openElement(
+                'div',
+                array(
+                    'id' => $chartStyle . 'ChartArea' . $title,
+                    'class' => $chartStyle . 'Area',
+                    'data-chartdata' => $dataset
+                )
+            );
 
-            $ret .= '<table class="' . $chartStyle . 'ChartTable">';
+            $ret .= Html::openElement('table', array('class' => $chartStyle . 'ChartTable'));
 
             //set title.
-            $ret .= '<tr><td colspan="2"><h1>' . $args['title'] . '</h1></td></tr>';
+            $ret .= Html::openElement('tr');
 
-            $ret .= '<tr>';
-            $ret .= '<td>';
+            $ret .= Html::openElement('td', array('colspan' => "2"));
+            $ret .= Html::element('h1', array(''), $args['title']);
+            $ret .= Html::closeElement('td');
 
-            $ret .= '<canvas id="' . $chartStyle . 'Chart' . $title . '" class="' . $chartStyle . 'Canvas" height="400" width="650" margin-right="10"></canvas>';
-            $ret .= '</td>';
+            $ret .= Html::closeElement('tr');
 
-            $ret .= '<td>';
-            $ret .= '<div id="' . $chartStyle . 'Chart' . $title . 'Filter" class="' . $chartStyle . 'Filter"></div>';
-            $ret .= '</td>';
-            $ret .= '</tr>';
+            $ret .= Html::openElement('tr');
+            $ret .= Html::openElement('td');
 
-            $ret .= '</table>';
-            $ret .= '</div>'; //close the chart type area.
+            $ret .= Html::element(
+                'canvas',
+                array(
+                    'id' => $chartStyle . 'Chart' . $title,
+                    'class' => $chartStyle . 'Canvas',
+                    'height' => '400',
+                    'width' => '650',
+                    'margin-right' => '10'
+                )
+            );
+
+            $ret .= Html::closeElement('td');
+            $ret .= Html::openElement('td');
+            $ret .= Html::element(
+                'div',
+                array(
+                    'id' => $chartStyle . 'Chart' . $title . 'Filter',
+                    'class' => $chartStyle . 'Filter'
+                )
+            );
+
+            $ret .= Html::closeElement('td');
+            $ret .= Html::closeElement('tr');
+
+            $ret .= Html::closeElement('table');
 
         }
         else {
 
-            $title = str_replace(' ', '', $args['title']);
-
-            $ret = '<div id="mapChartArea' . $title . '" class="mapArea" data-chartdata=' . $dataset . '>';
-
+            $ret = Html::openElement(
+                'div',
+                array(
+                    'id' => 'mapChartArea' . $title,
+                    'class' => 'mapArea',
+                    'data-chartdata' => $dataset
+                )
+            );
             //set title.
-            $ret .= '<h1>' . $args['title'] . '</h1></td></tr>';
-            $ret .= '</div>';
+            $ret .= Html::openElement('tr');
+
+            $ret .= Html::openElement('td', array('colspan' => "2"));
+            $ret .= Html::element('h1', array(''), $args['title']);
+            $ret .= Html::closeElement('td');
+
+            $ret .= Html::closeElement('tr');
+
+            $ret .= Html::closeElement('div');
+
         }
 
+        $ret .= Html::closeElement('div');
         return $ret;
     }
 }
