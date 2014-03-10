@@ -1,3 +1,15 @@
+/**
+ * Set up all the charts.
+ *
+ * These functions rely on the following visualization libraries:
+ *
+ * ~ D3
+ * ~ TopoJSON
+ * ~ Charts.js
+ * ~ Datamaps
+ *
+ */
+
 $(document).ready( function(){
 
     if ($('.pieArea').length) {
@@ -7,7 +19,7 @@ $(document).ready( function(){
         //then draw each one.
         if($('.pieArea').length){
 
-            var ids = _.map(  $('.pieArea'), function( num ){
+            var ids = $.map(  $('.pieArea'), function( num ){
                 return num.id;
             });
 
@@ -51,7 +63,7 @@ $(document).ready( function(){
 
         var formatData = function(set){
 
-            var datapoints = _.map(set, function(row){
+            var datapoints = $.map(set, function(row){
                     return row.count;
                 }),
                 bardata,
@@ -67,7 +79,7 @@ $(document).ready( function(){
                 }
             });
 
-            bardata = _.map(dateAgg, function(n){
+            bardata = $.map(dateAgg, function(n){
                 return n;
             });
 
@@ -89,7 +101,7 @@ $(document).ready( function(){
 
         if($('.barArea').length){
 
-            var ids = _.map($('.barArea'), function(num){
+            var ids = $.map($('.barArea'), function(num){
                 return num.id;
             });
 
@@ -106,7 +118,7 @@ $(document).ready( function(){
         }
         if($('.lineArea').length){
 
-            var ids = _.map($('.lineArea'), function(num){
+            var ids = $.map($('.lineArea'), function(num){
                 return num.id;
             });
 
@@ -125,7 +137,7 @@ $(document).ready( function(){
     if ($('.mapArea').length) {
 
         if($('.mapArea').length){
-            var ids = _.map($('.mapArea'), function(num){
+            var ids = $.map($('.mapArea'), function(num){
                 return num.id;
             });
 
