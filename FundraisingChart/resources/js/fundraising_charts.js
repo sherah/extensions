@@ -16,15 +16,12 @@ $(document).ready( function(){
 
                 function drawPieChart( data ) {
 
-                    var colors = setupColors(),
-                        colorArray = _.map( colors, function( n ){
-                            return n;
-                        }),
+                    var colorArray = circleThroughColors(data.length),
                         context = $( '#' + id.replace( 'Area','') ).get( 0 ).getContext( '2d' ),
                         dataSet = [];
 
-                    //todo: fix the fact that these colors run out. do a check on which array index - write function in helpers
-                    //was last used for color and then use the next one unless it's the last (first)
+                    console.log('color array: ' + colorArray);
+
                     data.forEach( function( row, i ){
                         var n = i + 1;
                         dataSet.push( { value: row.count, color: colorArray[colorArray.length - n] } );
