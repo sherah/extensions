@@ -26,13 +26,16 @@ $(document).ready( function(){
             ids.forEach( function( id ){
                 dataSet = $.parseJSON($('#' + id).attr('data-chartdata'));
 
+                /**
+                 * Pass JSON data to be drawn into a pie chart div.
+                 *
+                 * @param data
+                 */
                 function drawPieChart( data ) {
 
                     var colorArray = circleThroughColors(data.length),
                         context = $( '#' + id.replace( 'Area','') ).get( 0 ).getContext( '2d' ),
                         dataSet = [];
-
-                    console.log('color array: ' + colorArray);
 
                     data.forEach( function( row, i ){
                         var n = i + 1;
@@ -61,6 +64,13 @@ $(document).ready( function(){
     }
     if ($('.barArea').length || $('.lineArea').length) {
 
+        /**
+         * Format the data set in the attribute for the bar or line charts.
+         * Return this data in the format readable by respective charting libraries.
+         *
+         * @param set
+         * @returns {{labels: string[], datasets: *[]}}
+         */
         var formatData = function(set){
 
             var datapoints = $.map(set, function(row){

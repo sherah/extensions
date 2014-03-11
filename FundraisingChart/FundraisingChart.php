@@ -23,7 +23,3 @@ $wgResourceModules['ext.fundraisingChart'] = array(
     'dependencies' => 'moment'
 );
 
-//make new resourceModules functions and refer to them in the main one.
-//$wgResourceModules[] = array(
-//    'styles'
-//);

@@ -47,6 +47,7 @@ class FundraisingChart {
      * @return string
      */
     static function frChartDataSetFetch( $dataset ){
+
         $raw_json = file_get_contents($dataset);
         $d = json_decode($raw_json);
 
@@ -67,7 +68,22 @@ class FundraisingChart {
         $parser -> getOutput()->addModules('ext.fundraisingChart');
 
         if($args['dataset']){
-            $dataset = FundraisingChart::frChartDataSetFetch( $args['dataset'] );
+
+            //make sure the incoming URL is actually a proper frdata URL.
+            //if not, don't display the chart.
+            $testSet = $args['dataset'];
+            $testSetFocus = strstr($testSet, 'http://frdata.wikimedia.org/', true);
+            $acceptedURLs = array(
+                "2012-13-fiscal-donationdata-medium-breakdown.json",
+                "2012-13-fiscal-donation-range-breakdown.json",
+                "countries.json"
+            );
+
+            if(in_array( $testSetFocus, $acceptedURLs ){
+                $dataset = FundraisingChart::frChartDataSetFetch( $testSet );
+            } else {
+                $dataset = "nothing";
+            }
         }else{
             $dataset = "nothing";
         };

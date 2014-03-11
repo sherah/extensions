@@ -1,3 +1,10 @@
+/**
+ * Cycle through available colors to generate a colors array of any specified length.
+ * For general use in chart widgets.
+ *
+ * @param numberOfColors
+ * @returns {Array}
+ */
 function circleThroughColors(numberOfColors) {
 
     var colors = [
