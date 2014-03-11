@@ -10,7 +10,7 @@
  *
  */
 
-$(document).ready( function(){
+( function ( mw, $) {
 
     if ($('.pieArea').length) {
 
@@ -196,5 +196,5 @@ $(document).ready( function(){
 
     }
 
-} );
+} ( mediaWiki, jQuery ));
 

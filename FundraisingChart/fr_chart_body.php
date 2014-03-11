@@ -71,19 +71,20 @@ class FundraisingChart {
 
             //make sure the incoming URL is actually a proper frdata URL.
             //if not, don't display the chart.
-            $testSet = $args['dataset'];
-            $testSetFocus = strstr($testSet, 'http://frdata.wikimedia.org/', true);
-            $acceptedURLs = array(
-                "2012-13-fiscal-donationdata-medium-breakdown.json",
-                "2012-13-fiscal-donation-range-breakdown.json",
-                "countries.json"
-            );
-
-            if(in_array( $testSetFocus, $acceptedURLs ){
-                $dataset = FundraisingChart::frChartDataSetFetch( $testSet );
-            } else {
-                $dataset = "nothing";
-            }
+//            $testSet = $args['dataset'];
+//            $testSetFocus = strstr($testSet, 'http://frdata.wikimedia.org/', true);
+//            $acceptedURLs = array(
+//                "2012-13-fiscal-donationdata-medium-breakdown.json",
+//                "2012-13-fiscal-donation-range-breakdown.json",
+//                "countries.json"
+//            );
+//
+//            if(in_array( $testSetFocus, $acceptedURLs ){
+                $dataset = FundraisingChart::frChartDataSetFetch($args['dataset']);
+                //$dataset = FundraisingChart::frChartDataSetFetch( $testSet );
+//            } else {
+//                $dataset = "nothing";
+//            }
         }else{
             $dataset = "nothing";
         };
