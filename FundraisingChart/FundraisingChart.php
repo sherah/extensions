@@ -22,4 +22,10 @@ $wgResourceModules['ext.fundraisingChart'] = array(
 	'remoteExtPath' => 'FundraisingChart',
     'dependencies' => 'moment'
 );
+//$wgResourceModules['ext.fundraisingChart.bootstrap'] = array(
+//
+//    'localBasePath' => '__DIR__/modules',
+//    'remoteExtPath' =>
+//
+//);
 

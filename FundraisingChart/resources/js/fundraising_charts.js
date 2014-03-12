@@ -24,6 +24,7 @@
             });
 
             ids.forEach( function( id ){
+                console.log($.parseJSON($('#' + id).attr('data-chartdata')));
                 dataSet = $.parseJSON($('#' + id).attr('data-chartdata'));
 
                 /**
@@ -147,19 +148,34 @@
     if ($('.mapArea').length) {
 
         if($('.mapArea').length){
+
             var ids = $.map($('.mapArea'), function(num){
                 return num.id;
             });
 
             ids.forEach(function(el_id){
-                console.log($(el_id).attr('data-chartdata'));
-                var map = new Datamap({
+
+                var jsonData,
+                    jsonDataSource = $('#' + el_id).attr('data-chartdata');
+                //ajax request to get the json data from frdata
+                $.ajax({
+                    dataType: "json",
+                    url: jsonDataSource,
+                    success: function(data){
+                        console.log("got the data: ", data);
+                    }
+                }).done(function(){
+                    console.log("done function works.");
+//                    jsonData = data;
+//                    console.log("json data is: ", jsonData);
+                });
+
+                new Datamap({
 
                     element: document.getElementById(el_id),
 
-                    data: $(el_id).attr('data-chartdata'),
+                    data: jsonData,
 
-                    //todo: fix this
                     fills: {
                         gray   : '#4D4D4D',
                         blue   : '#5DA5DA',

@@ -67,25 +67,26 @@ class FundraisingChart {
 
         $parser -> getOutput()->addModules('ext.fundraisingChart');
 
-        if($args['dataset']){
+        if(isset($args['dataset'])){
 
             //make sure the incoming URL is actually a proper frdata URL.
             //if not, don't display the chart.
-//            $testSet = $args['dataset'];
-//            $testSetFocus = strstr($testSet, 'http://frdata.wikimedia.org/', true);
-//            $acceptedURLs = array(
-//                "2012-13-fiscal-donationdata-medium-breakdown.json",
-//                "2012-13-fiscal-donation-range-breakdown.json",
-//                "countries.json"
-//            );
-//
-//            if(in_array( $testSetFocus, $acceptedURLs ){
-                $dataset = FundraisingChart::frChartDataSetFetch($args['dataset']);
-                //$dataset = FundraisingChart::frChartDataSetFetch( $testSet );
-//            } else {
-//                $dataset = "nothing";
-//            }
+            $testSet = $args['dataset'];
+            $acceptedURLs = array(
+                "http://frdata.wikimedia.org/2012-13-fiscal-donationdata-medium-breakdown.json",
+                "http://frdata.wikimedia.org/2012-13-fiscal-donation-range-breakdown.json",
+                "http://frdata.wikimedia.org/countries.json"
+            );
+            syslog(LOG_INFO, "testset: " . $testSet . " & accepted urls: " . $acceptedURLs);
+            if(!in_array( $testSet, $acceptedURLs )){
+                syslog(LOG_INFO, $testSet . " is not one of the valid URLs.");
+                $dataset = "nothing";
+            } else {
+                syslog(LOG_INFO, $testSet . " IS INDEED one of the valid URLs.");
+                $dataset = $testSet;
+            }
         }else{
+            syslog(LOG_INFO, "The dataset is empty.");
             $dataset = "nothing";
         };
 
