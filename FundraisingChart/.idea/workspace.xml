@@ -44,7 +44,7 @@
       <file leaf-file-name="fr_chart_body.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fr_chart_body.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="37" selection-start="2844" selection-end="2844" vertical-scroll-proportion="-15.5" vertical-offset="633" max-vertical-offset="2550">
+            <state line="85" column="14" selection-start="2839" selection-end="2839" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2730">
               <folding />
             </state>
           </provider>
@@ -62,7 +62,7 @@
       <file leaf-file-name="FundraisingChart.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FundraisingChart.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="49" selection-start="1517" selection-end="1517" vertical-scroll-proportion="-26.875" vertical-offset="0" max-vertical-offset="885">
+            <state line="17" column="23" selection-start="567" selection-end="567" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="885">
               <folding />
             </state>
           </provider>
@@ -71,7 +71,7 @@
       <file leaf-file-name="chartFormatHelpers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/chartFormatHelpers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="19" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+            <state line="5" column="19" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="660">
               <folding />
             </state>
           </provider>
@@ -80,7 +80,7 @@
       <file leaf-file-name="fundraising_charts.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/js/fundraising_charts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="156" column="0" selection-start="4982" selection-end="4982" vertical-scroll-proportion="-0.16829532" vertical-offset="2495" max-vertical-offset="3675">
+            <state line="168" column="20" selection-start="5450" selection-end="5450" vertical-scroll-proportion="-0.022315202" vertical-offset="2536" max-vertical-offset="4110">
               <folding />
             </state>
           </provider>
@@ -111,8 +111,8 @@
         <option value="$PROJECT_DIR$/resources/js/lineChart.js" />
         <option value="$PROJECT_DIR$/resources/js/chartFormatHelpers.js" />
         <option value="$PROJECT_DIR$/fr_chart_body.php" />
-        <option value="$PROJECT_DIR$/resources/js/fundraising_charts.js" />
         <option value="$PROJECT_DIR$/FundraisingChart.php" />
+        <option value="$PROJECT_DIR$/resources/js/fundraising_charts.js" />
       </list>
     </option>
   </component>
@@ -124,8 +124,8 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1366" />
-    <option name="height" value="1054" />
+    <option name="width" value="1440" />
+    <option name="height" value="874" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -321,7 +321,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CentralNotice" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
     <property name="full.screen.before.presentation.mode" value="true" />
   </component>
@@ -380,16 +380,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1366" height="1054" extended-state="0" />
+    <frame x="0" y="22" width="1440" height="874" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25755286" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20600858" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962963" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -398,9 +397,10 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -418,9 +418,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11821086" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -442,6 +442,27 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/FundraisingChart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="68" selection-start="1536" selection-end="1536" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/chartFormatHelpers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="19" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/fundraising_charts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="231" column="23" selection-start="8167" selection-end="8167" vertical-scroll-proportion="0.0" vertical-offset="2934" max-vertical-offset="3690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/fundraising_charts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="162" column="36" selection-start="5200" selection-end="5200" vertical-scroll-proportion="0.0" vertical-offset="1965" max-vertical-offset="3255">
@@ -722,14 +743,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fr_chart_body.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="37" selection-start="2844" selection-end="2844" vertical-scroll-proportion="-15.5" vertical-offset="633" max-vertical-offset="2550">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FundraisingChart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="49" selection-start="1517" selection-end="1517" vertical-scroll-proportion="-26.875" vertical-offset="0" max-vertical-offset="885">
+        <state line="85" column="14" selection-start="2839" selection-end="2839" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2730">
           <folding />
         </state>
       </provider>
@@ -741,9 +755,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FundraisingChart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="23" selection-start="567" selection-end="567" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/fundraising_charts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="156" column="0" selection-start="4982" selection-end="4982" vertical-scroll-proportion="-0.16829532" vertical-offset="2495" max-vertical-offset="3675">
+        <state line="168" column="20" selection-start="5450" selection-end="5450" vertical-scroll-proportion="-0.022315202" vertical-offset="2536" max-vertical-offset="4110">
           <folding />
         </state>
       </provider>

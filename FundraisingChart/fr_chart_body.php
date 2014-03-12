@@ -75,18 +75,15 @@ class FundraisingChart {
             $acceptedURLs = array(
                 "http://frdata.wikimedia.org/2012-13-fiscal-donationdata-medium-breakdown.json",
                 "http://frdata.wikimedia.org/2012-13-fiscal-donation-range-breakdown.json",
-                "http://frdata.wikimedia.org/countries.json"
+                "http://frdata.wikimedia.org/countries.json",
+                "http://frdata.wikimedia.org/donationdata-country-breakdown.json"
             );
-            syslog(LOG_INFO, "testset: " . $testSet . " & accepted urls: " . $acceptedURLs);
             if(!in_array( $testSet, $acceptedURLs )){
-                syslog(LOG_INFO, $testSet . " is not one of the valid URLs.");
-                $dataset = "nothing";
+                $dataset = "none";
             } else {
-                syslog(LOG_INFO, $testSet . " IS INDEED one of the valid URLs.");
                 $dataset = $testSet;
             }
         }else{
-            syslog(LOG_INFO, "The dataset is empty.");
             $dataset = "nothing";
         };
 

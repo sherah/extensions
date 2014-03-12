@@ -15,8 +15,7 @@ $wgHooks['ParserFirstCallInit'][] = 'FundraisingChart::onParserInit';
 
 $wgResourceModules['ext.fundraisingChart'] = array(
 	'styles'  => array('resources/css/style.css'),
-	'scripts' => array('resources/js/Chart.min.js',
-        'resources/js/chartFormatHelpers.js', 'resources/js/fundraising_charts.js'),
+	'scripts' => array('resources/js/chartFormatHelpers.js', 'resources/js/fundraising_charts.js'),
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'FundraisingChart',
     'dependencies' => 'moment'
@@ -42,6 +41,7 @@ $wgResourceModules['ext.fundraisingChart.topojson'] = array(
 
 $wgResourceModules['ext.fundraisingChart.datamaps'] = array(
     'scripts' => '/ext.fundraisingChart.datamaps/datamaps.world.js',
+    'dependencies' => array('ext.fundraisingChart.topojson', 'ext.fundraisingChart.d3'),
     'localBasePath' => '__DIR__/modules',
     'remoteExtPath' => 'FundraisingChart'
 );

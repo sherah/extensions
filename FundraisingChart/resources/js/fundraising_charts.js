@@ -13,7 +13,6 @@
 ( function ( mw, $) {
 
     if ($('.pieArea').length) {
-
         //if there are any pieArea classed areas,
         //iterate through each one to get their dataSets.
         //then draw each one.
@@ -23,40 +22,53 @@
                 return num.id;
             });
 
-            ids.forEach( function( id ){
-                console.log($.parseJSON($('#' + id).attr('data-chartdata')));
-                dataSet = $.parseJSON($('#' + id).attr('data-chartdata'));
+            ids.forEach( function( el_id ){
 
-                /**
-                 * Pass JSON data to be drawn into a pie chart div.
-                 *
-                 * @param data
-                 */
-                function drawPieChart( data ) {
+                var dataSet,
+                    jsonDataSource = $('#' + el_id).attr('data-chartdata');
 
-                    var colorArray = circleThroughColors(data.length),
-                        context = $( '#' + id.replace( 'Area','') ).get( 0 ).getContext( '2d' ),
-                        dataSet = [];
+                var setData = function(){
 
-                    data.forEach( function( row, i ){
-                        var n = i + 1;
-                        dataSet.push( { value: row.count, color: colorArray[colorArray.length - n] } );
-                        $( '#' + id.replace('Area','') + 'Filter' ).append(
-                            $( '<div>' ).append(
-                                    $( '<div>' )
-                                        .addClass('legendicon')
-                                        .css( 'background-color', colorArray[colorArray.length - n])
-                                ).append(
-                                    $( '<span>' ).text( '$' + row.bracket_max )
-                                )
-                        );
+                    /**
+                     * Pass JSON data to be drawn into a pie chart div.
+                     *
+                     * @param data
+                     */
+                    function drawPieChart( data ) {
 
-                    });
+                        var colorArray = circleThroughColors(data.length),
+                            context = $( '#' + id.replace( 'Area','') ).get( 0 ).getContext( '2d' ),
+                            dataSet = [];
 
-                    new Chart(context).Doughnut(dataSet);
+                        data.forEach( function( row, i ){
+                            var n = i + 1;
+                            dataSet.push( { value: row.count, color: colorArray[colorArray.length - n] } );
+                            $( '#' + id.replace('Area','') + 'Filter' ).append(
+                                $( '<div>' ).append(
+                                        $( '<div>' )
+                                            .addClass('legendicon')
+                                            .css( 'background-color', colorArray[colorArray.length - n])
+                                    ).append(
+                                        $( '<span>' ).text( '$' + row.bracket_max )
+                                    )
+                            );
+
+                        });
+
+                        new Chart(context).Doughnut(dataSet);
+                    }
+
+                    drawPieChart(dataSet);
                 }
 
-                drawPieChart(dataSet);
+                $.ajax({
+                    dataType: "json",
+                    url: jsonDataSource,
+                    success: function( returnedData ){
+                        dataSet = returnedData;
+                        setData();
+                    }
+                });
 
             });
 
@@ -118,12 +130,25 @@
 
             ids.forEach(function(el_id){
 
-                var dataSet = $.parseJSON($('#' + el_id).attr('data-chartdata')),
-                //check the dataSet's format and proceed accordingly
+                var dataSet,
+                    jsonDataSource = $('#' + el_id).attr('data-chartdata');
+
+                var setData = function(){
+                    //check the dataSet's format and proceed accordingly
                     formattedData = formatData(dataSet),
                     context = $( '#' + el_id.replace('Area','') ).get( 0 ).getContext( '2d' );
 
-                new Chart(context).Bar(formattedData);
+                    new Chart(context).Bar(formattedData);
+                }
+
+                $.ajax({
+                    dataType: "json",
+                    url: jsonDataSource,
+                    success: function( returnedData ){
+                        dataSet = returnedData;
+                        setData();
+                    }
+                });
 
             });
         }
@@ -135,12 +160,16 @@
 
             ids.forEach(function(el_id){
 
-                var dataSet = $.parseJSON($('#' + el_id).attr('data-chartdata')),
-                //check the dataSet's format and proceed accordingly
+                var dataSet,
+                    jsonDataSource = $('#' + el_id).attr('data-chartdata');
+
+                var setData = function(){
+                    //check the dataSet's format and proceed accordingly
                     formattedData = formatData(dataSet),
                     context = $( '#' + el_id.replace("Area","") ).get( 0 ).getContext( '2d' );
 
-                new Chart(context).Line(formattedData);
+                    new Chart(context).Line(formattedData);
+                }
 
             });
         }
@@ -155,79 +184,79 @@
 
             ids.forEach(function(el_id){
 
-//                var data,
-//                    jsonData,
-//                    jsonDataSource = $('#' + el_id).attr('data-chartdata');
-//                //ajax request to get the json data from frdata
-//                $.ajax({
-//                    dataType: "json",
-//                    url: jsonDataSource,
-//                    success: function( returnedData ){
-//                        console.log( "got the data: ", returnedData );
-//                        data = returnedData;
-//                    }
-//                }).done(function(){
-//                    console.log("done function works.");
-////                    jsonData = data;
-////                    console.log("json data is: ", jsonData);
-//                });
-//
-//                //get the fetched data into the correct array format.
-//                var mapDataArrays = [['Country', 'Sum']], countryObj = {};
-//                data.forEach(function(el,i){
-//                    if(el.country) {
-//                        var miniArray = [el.country, el.sum];
-//                        mapDataArrays.push(miniArray);
-//                        if(el.country in countryObj){
-//                            countryObj[el.country] += el.sum;
-//                        } else {
-//                            countryObj[el.country] = el.sum;
-//                        }
-//                    }
-//                });
-//
-//                var countryObjArray = [['Country', 'Sum']];
-//                for (var key in countryObj){
-//                    var sum = countryObj[key], val = sum.formatMoney(2, '.', ',');
-//                    var arr = [key, countryObj[key]];
-//                    countryObjArray.push(arr);
-//                }
+                var data,
+                    jsonData,
+                    jsonDataSource = $('#' + el_id).attr('data-chartdata');
 
-                new Datamap({
+                var setData = function(){
 
-                    element: document.getElementById(el_id),
+                    //get the fetched data into the correct array format.
+                    var mapDataArrays = [['Country', 'Sum']], countryObj = {};
+                    data.forEach(function(el,i){
+                        if(el.country) {
+                            var miniArray = [el.country, el.sum];
+                            mapDataArrays.push(miniArray);
+                            if(el.country in countryObj){
+                                countryObj[el.country] += el.sum;
+                            } else {
+                                countryObj[el.country] = el.sum;
+                            }
+                        }
+                    });
 
-                    data: jsonData,
-
-                    fills: {
-                        gray   : '#4D4D4D',
-                        blue   : '#5DA5DA',
-                        orange : '#FAA43A',
-                        green  : '#60BD68',
-                        pink   : '#F17CB0',
-                        brown  : '#B2912F',
-                        purple : '#B276B2',
-                        yellow : '#DECF3F',
-                        red    : '#F15854'
-                    },
-
-                    geographyConfig: {
-
-                        dataUrl: null, //if not null, ext.fundraisingChart.datamaps will fetch the map JSON (currently only supports ext.fundraisingChart.topojson)
-                        hideAntarctica: true,
-                        borderWidth: 1,
-                        borderColor: '#FDFDFD',
-                        popupOnHover: true,
-                        popupTemplate: function(geography, data) {
-                            return '<div class="hoverinfo"><strong>' + geography.properties.name + '</strong></div>';
-                        },
-                        highlightOnHover: true,
-                        highlightFillColor: '#F17CB0',
-                        highlightBorderColor: 'rgba(255,255,255,0.4)',
-                        highlightBorderWidth: 1
-
+                    var countryObjArray = [['Country', 'Sum']];
+                    for (var key in countryObj){
+                        var sum = countryObj[key], val = sum.formatMoney(2, '.', ',');
+                        var arr = [key, countryObj[key]];
+                        countryObjArray.push(arr);
                     }
 
+                    new Datamap({
+
+                        element: document.getElementById(el_id),
+
+                        data: jsonData,
+
+                        fills: {
+                            gray   : '#4D4D4D',
+                            blue   : '#5DA5DA',
+                            orange : '#FAA43A',
+                            green  : '#60BD68',
+                            pink   : '#F17CB0',
+                            brown  : '#B2912F',
+                            purple : '#B276B2',
+                            yellow : '#DECF3F',
+                            red    : '#F15854'
+                        },
+
+                        geographyConfig: {
+
+                            dataUrl: null, //if not null, ext.fundraisingChart.datamaps will fetch the map JSON (currently only supports ext.fundraisingChart.topojson)
+                            hideAntarctica: true,
+                            borderWidth: 1,
+                            borderColor: '#FDFDFD',
+                            popupOnHover: true,
+                            popupTemplate: function(geography, data) {
+                                return '<div class="hoverinfo"><strong>' + geography.properties.name + '</strong></div>';
+                            },
+                            highlightOnHover: true,
+                            highlightFillColor: '#F17CB0',
+                            highlightBorderColor: 'rgba(255,255,255,0.4)',
+                            highlightBorderWidth: 1
+
+                        }
+
+                    });
+                }
+
+                //ajax request to get the json data from frdata
+                $.ajax({
+                    dataType: "json",
+                    url: jsonDataSource,
+                    success: function( returnedData ){
+                        data = returnedData;
+                        setData();
+                    }
                 });
 
             });
