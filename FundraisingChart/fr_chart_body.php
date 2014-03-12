@@ -29,7 +29,7 @@
  * make sure each count is sorted by month.
  * bar-chart:  json with 'date' x-axis and 'count' y-axis.
  * line-chart: json with date x-axis and total y-axis.
- * map-chart:  json map data in the datamaps format, usually with fillColor and associated data.
+ * map-chart:  json map data in the ext.fundraisingChart.datamaps format, usually with fillColor and associated data.
  * title: the title that will display at the top of this chart.
  *
  */

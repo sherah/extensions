@@ -79,9 +79,9 @@
     }
 
     function addStyleBlock() {
-        if ( d3.select('.datamaps-style-block').empty() ) {
-            d3.select('head').attr('class', 'datamaps-style-block').append('style')
-                .html('.datamap path {stroke: #FFFFFF; stroke-width: 1px;} .datamaps-legend dt, .datamaps-legend dd { float: left; margin: 0 3px 0 0;} .datamaps-legend dd {width: 20px; margin-right: 6px; border-radius: 3px;} .datamaps-legend {padding-bottom: 20px; z-index: 1001; position: absolute; left: 4px; font-size: 12px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;} .datamaps-hoverover {display: none; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; } .hoverinfo {padding: 4px; border-radius: 1px; background-color: #FFF; box-shadow: 1px 1px 5px #CCC; font-size: 12px; border: 1px solid #CCC; } .hoverinfo hr {border:1px dotted #CCC; }');
+        if ( d3.select('.ext.fundraisingChart.datamaps-style-block').empty() ) {
+            d3.select('head').attr('class', 'ext.fundraisingChart.datamaps-style-block').append('style')
+                .html('.datamap path {stroke: #FFFFFF; stroke-width: 1px;} .ext.fundraisingChart.datamaps-legend dt, .ext.fundraisingChart.datamaps-legend dd { float: left; margin: 0 3px 0 0;} .ext.fundraisingChart.datamaps-legend dd {width: 20px; margin-right: 6px; border-radius: 3px;} .ext.fundraisingChart.datamaps-legend {padding-bottom: 20px; z-index: 1001; position: absolute; left: 4px; font-size: 12px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;} .ext.fundraisingChart.datamaps-hoverover {display: none; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; } .hoverinfo {padding: 4px; border-radius: 1px; background-color: #FFF; box-shadow: 1px 1px 5px #CCC; font-size: 12px; border: 1px solid #CCC; } .hoverinfo hr {border:1px dotted #CCC; }');
         }
     }
 
@@ -91,9 +91,9 @@
             geoConfig = this.options.geographyConfig;
 
 
-        var subunits = this.svg.select('g.datamaps-subunits');
+        var subunits = this.svg.select('g.ext.fundraisingChart.datamaps-subunits');
         if ( subunits.empty() ) {
-            subunits = this.addLayer('datamaps-subunits');
+            subunits = this.addLayer('ext.fundraisingChart.datamaps-subunits');
         }
 
         var geoData = topojson.feature( data, data.objects[ this.options.scope ] ).features;
@@ -103,13 +103,13 @@
             });
         }
 
-        var geo = subunits.selectAll('path.datamaps-subunit').data( geoData );
+        var geo = subunits.selectAll('path.ext.fundraisingChart.datamaps-subunit').data( geoData );
 
         geo.enter()
             .append('path')
             .attr('d', this.path)
             .attr('class', function(d) {
-                return 'datamaps-subunit ' + d.id;
+                return 'ext.fundraisingChart.datamaps-subunit ' + d.id;
             })
             .attr('data-info', function(d) {
                 return JSON.stringify( colorCodeData[d.id]);
@@ -134,7 +134,7 @@
         var options = this.options.geographyConfig;
 
         if ( options.highlightOnHover || options.popupOnHover ) {
-            svg.selectAll('.datamaps-subunit')
+            svg.selectAll('.ext.fundraisingChart.datamaps-subunit')
                 .on('mouseover', function(d) {
                     var $this = d3.select(this);
 
@@ -153,7 +153,7 @@
                             .style('fill-opacity', options.highlightFillOpacity)
                             .attr('data-previousAttributes', JSON.stringify(previousAttributes));
 
-                        //as per discussion on https://github.com/markmarkoh/datamaps/issues/19
+                        //as per discussion on https://github.com/markmarkoh/ext.fundraisingChart.datamaps/issues/19
                         if ( ! /MSIE/.test(navigator.userAgent) ) {
                             moveToFront.call(this);
                         }
@@ -174,7 +174,7 @@
                         }
                     }
                     $this.on('mousemove', null);
-                    d3.selectAll('.datamaps-hoverover').style('display', 'none');
+                    d3.selectAll('.ext.fundraisingChart.datamaps-hoverover').style('display', 'none');
                 });
         }
 
@@ -213,7 +213,7 @@
         html += '</dl>';
 
         var hoverover = d3.select( this.options.element ).append('div')
-            .attr('class', 'datamaps-legend')
+            .attr('class', 'ext.fundraisingChart.datamaps-legend')
             .html(html);
     }
 
@@ -229,12 +229,12 @@
             options = defaultOptions.arcConfig;
         }
 
-        var arcs = layer.selectAll('path.datamaps-arc').data( data, JSON.stringify );
+        var arcs = layer.selectAll('path.ext.fundraisingChart.datamaps-arc').data( data, JSON.stringify );
 
         arcs
             .enter()
             .append('svg:path')
-            .attr('class', 'datamaps-arc')
+            .attr('class', 'ext.fundraisingChart.datamaps-arc')
             .style('stroke-linecap', 'round')
             .style('stroke', function(datum) {
                 if ( datum.options && datum.options.strokeColor) {
@@ -282,7 +282,7 @@
         var self = this;
         options = options || {};
         var labelStartCoodinates = this.projection([-67.707617, 42.722131]);
-        this.svg.selectAll(".datamaps-subunit")
+        this.svg.selectAll(".ext.fundraisingChart.datamaps-subunit")
             .attr("data-foo", function(d) {
                 var center = self.path.centroid(d);
                 var xOffset = 7.5, yOffset = 5;
@@ -332,12 +332,12 @@
             throw "Datamaps Error - bubbles must be an array";
         }
 
-        var bubbles = layer.selectAll('circle.datamaps-bubble').data( data, JSON.stringify );
+        var bubbles = layer.selectAll('circle.ext.fundraisingChart.datamaps-bubble').data( data, JSON.stringify );
 
         bubbles
             .enter()
             .append('svg:circle')
-            .attr('class', 'datamaps-bubble')
+            .attr('class', 'ext.fundraisingChart.datamaps-bubble')
             .attr('cx', function ( datum ) {
                 return self.latLngToXY(datum.latitude, datum.longitude)[0];
             })
@@ -390,7 +390,7 @@
                     }
                 }
 
-                d3.selectAll('.datamaps-hoverover').style('display', 'none');
+                d3.selectAll('.ext.fundraisingChart.datamaps-hoverover').style('display', 'none');
             })
             .transition().duration(400)
             .attr('r', function ( datum ) {
@@ -422,7 +422,7 @@
     function Datamap( options ) {
 
         if ( typeof d3 === 'undefined' || typeof topojson === 'undefined' ) {
-            throw new Error('Include d3.js (v3.0.3 or greater) and topojson on this page before creating a new map');
+            throw new Error('Include d3.js (v3.0.3 or greater) and ext.fundraisingChart.topojson on this page before creating a new map');
         }
 
         //set options for global use
@@ -462,7 +462,7 @@
         this.path = pathAndProjection.path;
         this.projection = pathAndProjection.projection;
 
-        //if custom URL for topojson data, retrieve it and render
+        //if custom URL for ext.fundraisingChart.topojson data, retrieve it and render
         if ( options.geographyConfig.dataUrl ) {
             d3.json( options.geographyConfig.dataUrl, function(error, results) {
                 if ( error ) throw new Error(error);
@@ -482,7 +482,7 @@
 
             if ( self.options.geographyConfig.popupOnHover || self.options.bubblesConfig.popupOnHover) {
                 hoverover = d3.select( self.options.element ).append('div')
-                    .attr('class', 'datamaps-hoverover')
+                    .attr('class', 'ext.fundraisingChart.datamaps-hoverover')
                     .style('z-index', 10001)
                     .style('position', 'absolute');
             }
@@ -541,7 +541,7 @@
         element.on('mousemove', null);
         element.on('mousemove', function() {
             var position = d3.mouse(this);
-            d3.select(self.svg[0][0].parentNode).select('.datamaps-hoverover')
+            d3.select(self.svg[0][0].parentNode).select('.ext.fundraisingChart.datamaps-hoverover')
                 .style('top', ( (position[1] + 30)) + "px")
                 .html(function() {
                     var data = JSON.parse(element.attr('data-info'));
@@ -551,7 +551,7 @@
                 .style('left', ( position[0]) + "px");
         });
 
-        d3.select(self.svg[0][0].parentNode).select('.datamaps-hoverover').style('display', 'block');
+        d3.select(self.svg[0][0].parentNode).select('.ext.fundraisingChart.datamaps-hoverover').style('display', 'block');
     };
 
     Datamap.prototype.addPlugin = function( name, pluginFn ) {

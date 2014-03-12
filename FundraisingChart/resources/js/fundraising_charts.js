@@ -155,20 +155,43 @@
 
             ids.forEach(function(el_id){
 
-                var jsonData,
-                    jsonDataSource = $('#' + el_id).attr('data-chartdata');
-                //ajax request to get the json data from frdata
-                $.ajax({
-                    dataType: "json",
-                    url: jsonDataSource,
-                    success: function(data){
-                        console.log("got the data: ", data);
-                    }
-                }).done(function(){
-                    console.log("done function works.");
-//                    jsonData = data;
-//                    console.log("json data is: ", jsonData);
-                });
+//                var data,
+//                    jsonData,
+//                    jsonDataSource = $('#' + el_id).attr('data-chartdata');
+//                //ajax request to get the json data from frdata
+//                $.ajax({
+//                    dataType: "json",
+//                    url: jsonDataSource,
+//                    success: function( returnedData ){
+//                        console.log( "got the data: ", returnedData );
+//                        data = returnedData;
+//                    }
+//                }).done(function(){
+//                    console.log("done function works.");
+////                    jsonData = data;
+////                    console.log("json data is: ", jsonData);
+//                });
+//
+//                //get the fetched data into the correct array format.
+//                var mapDataArrays = [['Country', 'Sum']], countryObj = {};
+//                data.forEach(function(el,i){
+//                    if(el.country) {
+//                        var miniArray = [el.country, el.sum];
+//                        mapDataArrays.push(miniArray);
+//                        if(el.country in countryObj){
+//                            countryObj[el.country] += el.sum;
+//                        } else {
+//                            countryObj[el.country] = el.sum;
+//                        }
+//                    }
+//                });
+//
+//                var countryObjArray = [['Country', 'Sum']];
+//                for (var key in countryObj){
+//                    var sum = countryObj[key], val = sum.formatMoney(2, '.', ',');
+//                    var arr = [key, countryObj[key]];
+//                    countryObjArray.push(arr);
+//                }
 
                 new Datamap({
 
@@ -190,7 +213,7 @@
 
                     geographyConfig: {
 
-                        dataUrl: null, //if not null, datamaps will fetch the map JSON (currently only supports topojson)
+                        dataUrl: null, //if not null, ext.fundraisingChart.datamaps will fetch the map JSON (currently only supports ext.fundraisingChart.topojson)
                         hideAntarctica: true,
                         borderWidth: 1,
                         borderColor: '#FDFDFD',
