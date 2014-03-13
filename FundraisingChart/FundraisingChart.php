@@ -18,8 +18,8 @@ $wgResourceModules['ext.fundraisingChart'] = array(
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'FundraisingChart',
     'dependencies' => array('moment', 'ext.fundraisingChart.bootstrap', 'ext.fundraisingChart.chartFormatHelpers', 
-        'ext.fundraisingChart.fundraising_charts', 'ext.fundraisingChart.chartsjs',
-        'ext.fundraisingChart.d3', 'ext.fundraisingChart.topojson', 'ext.fundraisingChart.datamaps')
+        'ext.fundraisingChart.d3', 'ext.fundraisingChart.chartsjs',
+        'ext.fundraisingChart.topojson', 'ext.fundraisingChart.datamaps', 'ext.fundraisingChart.fundraising_charts' )
 );
 
 $wgResourceModules['ext.fundraisingChart.chartFormatHelpers'] = array(

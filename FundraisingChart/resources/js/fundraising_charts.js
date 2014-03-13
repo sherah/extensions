@@ -159,6 +159,7 @@
             });
 
             ids.forEach(function(el_id){
+
                 var dataSet,
                     jsonDataSource = $('#' + el_id).attr('data-chartdata');
 
@@ -194,37 +195,12 @@
                 jsonDataSource = $('#' + el_id).attr('data-chartdata');
 
             var setData = function(){
-                console.log('dataSet: ', dataSet);
-                //get the fetched data into the correct array format.
-                var mapDataArrays = [['Country', 'Sum']], countryObj = {};
-                dataSet.forEach(function(el,i){
-                    if(el.country) {
-                        var miniArray = [el.country, el.sum];
-                        mapDataArrays.push(miniArray);
-                        if(el.country in countryObj){
-                            countryObj[el.country] += el.sum;
-                        } else {
-                            countryObj[el.country] = el.sum;
-                        }
-                    }
-                });
-
-                var countryObjArray = [['Country', 'Sum']];
-                for (var key in countryObj){
-                    var sum = countryObj[key], val = sum.formatMoney(2, '.', ',');
-                    var arr = [key, countryObj[key]];
-                    countryObjArray.push(arr);
-                }
-
-                console.log('countryObj: ', countryObj);
-                console.log('mapDataArrays: ', mapDataArrays);
-                console.log('countryObjArray: ', countryObjArray);
-
+                
                 new Datamap({
 
                     element: document.getElementById(el_id),
 
-                    data: countryObjArray,
+                    data: dataSet,
 
                     fills: {
                         gray   : '#4D4D4D',
