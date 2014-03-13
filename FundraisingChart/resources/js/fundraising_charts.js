@@ -37,13 +37,13 @@
                     function drawPieChart( data ) {
 
                         var colorArray = circleThroughColors(data.length),
-                            context = $( '#' + id.replace( 'Area','') ).get( 0 ).getContext( '2d' ),
+                            context = $( '#' + el_id.replace( 'Area','') ).get( 0 ).getContext( '2d' ),
                             dataSet = [];
 
                         data.forEach( function( row, i ){
                             var n = i + 1;
                             dataSet.push( { value: row.count, color: colorArray[colorArray.length - n] } );
-                            $( '#' + id.replace('Area','') + 'Filter' ).append(
+                            $( '#' + el_id.replace('Area','') + 'Filter' ).append(
                                 $( '<div>' ).append(
                                         $( '<div>' )
                                             .addClass('legendicon')
@@ -91,6 +91,8 @@
                 }),
                 bardata,
                 dateAgg = {};
+
+            console.log("data points: ", datapoints);
 
             //todo: get the labels dynamically
             set.forEach(function(row){
@@ -159,17 +161,25 @@
             });
 
             ids.forEach(function(el_id){
-
                 var dataSet,
                     jsonDataSource = $('#' + el_id).attr('data-chartdata');
 
                 var setData = function(){
                     //check the dataSet's format and proceed accordingly
                     formattedData = formatData(dataSet),
-                    context = $( '#' + el_id.replace("Area","") ).get( 0 ).getContext( '2d' );
+                    context = $( '#' + el_id.replace('Area','') ).get( 0 ).getContext( '2d' );
 
                     new Chart(context).Line(formattedData);
                 }
+
+                $.ajax({
+                        dataType: "json",
+                        url: jsonDataSource,
+                        success: function( returnedData ){
+                            dataSet = returnedData;
+                            setData();
+                        }
+                });
 
             });
         }
