@@ -92,8 +92,6 @@
                 bardata,
                 dateAgg = {};
 
-            console.log("data points: ", datapoints);
-
             //todo: get the labels dynamically
             set.forEach(function(row){
                 var d = row.date.slice(0,10);
@@ -186,91 +184,91 @@
     }
     if ($('.mapArea').length) {
 
-        if($('.mapArea').length){
+        var ids = $.map($('.mapArea'), function(num){
+            return num.id;
+        });
 
-            var ids = $.map($('.mapArea'), function(num){
-                return num.id;
-            });
+        ids.forEach(function(el_id){
 
-            ids.forEach(function(el_id){
+            var dataSet,
+                jsonDataSource = $('#' + el_id).attr('data-chartdata');
 
-                var data,
-                    jsonData,
-                    jsonDataSource = $('#' + el_id).attr('data-chartdata');
-
-                var setData = function(){
-
-                    //get the fetched data into the correct array format.
-                    var mapDataArrays = [['Country', 'Sum']], countryObj = {};
-                    data.forEach(function(el,i){
-                        if(el.country) {
-                            var miniArray = [el.country, el.sum];
-                            mapDataArrays.push(miniArray);
-                            if(el.country in countryObj){
-                                countryObj[el.country] += el.sum;
-                            } else {
-                                countryObj[el.country] = el.sum;
-                            }
+            var setData = function(){
+                console.log('dataSet: ', dataSet);
+                //get the fetched data into the correct array format.
+                var mapDataArrays = [['Country', 'Sum']], countryObj = {};
+                dataSet.forEach(function(el,i){
+                    if(el.country) {
+                        var miniArray = [el.country, el.sum];
+                        mapDataArrays.push(miniArray);
+                        if(el.country in countryObj){
+                            countryObj[el.country] += el.sum;
+                        } else {
+                            countryObj[el.country] = el.sum;
                         }
-                    });
-
-                    var countryObjArray = [['Country', 'Sum']];
-                    for (var key in countryObj){
-                        var sum = countryObj[key], val = sum.formatMoney(2, '.', ',');
-                        var arr = [key, countryObj[key]];
-                        countryObjArray.push(arr);
-                    }
-
-                    new Datamap({
-
-                        element: document.getElementById(el_id),
-
-                        data: jsonData,
-
-                        fills: {
-                            gray   : '#4D4D4D',
-                            blue   : '#5DA5DA',
-                            orange : '#FAA43A',
-                            green  : '#60BD68',
-                            pink   : '#F17CB0',
-                            brown  : '#B2912F',
-                            purple : '#B276B2',
-                            yellow : '#DECF3F',
-                            red    : '#F15854'
-                        },
-
-                        geographyConfig: {
-
-                            dataUrl: null, //if not null, ext.fundraisingChart.datamaps will fetch the map JSON (currently only supports ext.fundraisingChart.topojson)
-                            hideAntarctica: true,
-                            borderWidth: 1,
-                            borderColor: '#FDFDFD',
-                            popupOnHover: true,
-                            popupTemplate: function(geography, data) {
-                                return '<div class="hoverinfo"><strong>' + geography.properties.name + '</strong></div>';
-                            },
-                            highlightOnHover: true,
-                            highlightFillColor: '#F17CB0',
-                            highlightBorderColor: 'rgba(255,255,255,0.4)',
-                            highlightBorderWidth: 1
-
-                        }
-
-                    });
-                }
-
-                //ajax request to get the json data from frdata
-                $.ajax({
-                    dataType: "json",
-                    url: jsonDataSource,
-                    success: function( returnedData ){
-                        data = returnedData;
-                        setData();
                     }
                 });
 
+                var countryObjArray = [['Country', 'Sum']];
+                for (var key in countryObj){
+                    var sum = countryObj[key], val = sum.formatMoney(2, '.', ',');
+                    var arr = [key, countryObj[key]];
+                    countryObjArray.push(arr);
+                }
+
+                console.log('countryObj: ', countryObj);
+                console.log('mapDataArrays: ', mapDataArrays);
+                console.log('countryObjArray: ', countryObjArray);
+
+                new Datamap({
+
+                    element: document.getElementById(el_id),
+
+                    data: countryObjArray,
+
+                    fills: {
+                        gray   : '#4D4D4D',
+                        blue   : '#5DA5DA',
+                        orange : '#FAA43A',
+                        green  : '#60BD68',
+                        pink   : '#F17CB0',
+                        brown  : '#B2912F',
+                        purple : '#B276B2',
+                        yellow : '#DECF3F',
+                        red    : '#F15854'
+                    },
+
+                    geographyConfig: {
+
+                        dataUrl: null, //if not null, ext.fundraisingChart.datamaps will fetch the map JSON (currently only supports ext.fundraisingChart.topojson)
+                        hideAntarctica: true,
+                        borderWidth: 1,
+                        borderColor: '#FDFDFD',
+                        popupOnHover: true,
+                        popupTemplate: function(geography, data) {
+                            return '<div class="hoverinfo"><strong>' + geography.properties.name + '</strong></div>';
+                        },
+                        highlightOnHover: true,
+                        highlightFillColor: '#F17CB0',
+                        highlightBorderColor: 'rgba(255,255,255,0.4)',
+                        highlightBorderWidth: 1
+
+                    }
+
+                });
+            }
+
+            //ajax request to get the json data from frdata
+            $.ajax({
+                dataType: "json",
+                url: jsonDataSource,
+                success: function( returnedData ){
+                    dataSet = returnedData;
+                    setData();
+                }
             });
-        }
+
+        });
 
     }
 
