@@ -21,9 +21,24 @@ $wgResourceModules['ext.loveMap'] = array(
     'styles'        => array('resources/css/style.css'),
     'scripts'       => array('resources/js/d3.v3.min.js', 'resources/js/topojson.js', 'resources/js/datamaps.world.js', 'resources/js/main.js'),
     'localBasePath' => __DIR__,
-    'remoteExtPath' => 'LoveMap'
+    'remoteExtPath' => 'LoveMap',
+    'dependencies' => array('ext.loveMap.d3', 'ext.loveMap.topojson', 'ext.loveMap.datamaps')
 );
 
 $wgResourceModules['ext.loveMap.d3'] = array(
+	'scripts' => 'modules/chartFormatHelpers.js',
+    'localBasePath' => '__DIR__/modules',
+    'remoteExtPath' => 'LoveMap'
+);
 
+$wgResourceModules['ext.loveMap.topojson'] = array(
+	'scripts' => 'modules/chartFormatHelpers.js',
+    'localBasePath' => '__DIR__/modules',
+    'remoteExtPath' => 'LoveMap'
+);
+
+$wgResourceModules['ext.loveMap.datamaps'] = array(
+	'scripts' => 'modules/chartFormatHelpers.js',
+    'localBasePath' => '__DIR__/modules',
+    'remoteExtPath' => 'LoveMap'
 );
