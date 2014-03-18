@@ -22,9 +22,10 @@ class LoveMap {
     }
     static function mapRender( $input, array $args, Parser $parser, PPFrame $frame ) {
         $parser -> getOutput()->addModules('ext.loveMap');
+        $pageTitle = "Wikimedia Stories";
 
-        $ret  = '<h1>Fundraising Love Map</h1>';
-        $ret .= '<div id="loveMapArea"></div>';
+        $ret  = Html::element('h1', array(''), $pageTitle);
+        $ret .= Html::element('div', array('id' => 'loveMapArea'));
 
         return $ret;
     }
