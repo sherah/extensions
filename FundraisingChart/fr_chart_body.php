@@ -17,11 +17,12 @@
  */
 
 /**
- * Class FundraisingChart
+ * Generates embedded javascript charts from a tag that accepts fundraising datasets.
  *
  *
- * Usage for the tag <fundraisingChart />:
+ * Usage for the tag <fundraisingChart />, which is embeddable on wiki pages:
  *
+ * Tag attributes and their acceptable values:
  * charttype: pie-chart, line-chart, or bar-chart
  * dataset: a URL that provides the JSON in the correct format for the chart.
  * the formats:
@@ -43,7 +44,7 @@ class FundraisingChart {
      * Fetch the data to be displayed in the charts.
      *
      * todo: make safer by mapping URIs to URLs
-     * @param $dataset
+     * @param $dataset (JSON URL)
      * @return string
      */
     static function frChartDataSetFetch( $dataset ){
