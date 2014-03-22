@@ -12,67 +12,66 @@
 
 ( function ( mw, $) {
 
-    if ($('.pieArea').length) {
-        //if there are any pieArea classed areas,
-        //iterate through each one to get their dataSets.
-        //then draw each one.
-        if($('.pieArea').length){
+    //if there are any pieArea classed areas,
+    //iterate through each one to get their dataSets.
+    //then draw each one.
+    if($('.pieArea').length){
 
-            var ids = $.map(  $('.pieArea'), function( num ){
-                return num.id;
-            });
+        var ids = $.map(  $('.pieArea'), function( num ){
+            return num.id;
+        });
 
-            ids.forEach( function( el_id ){
+        ids.forEach( function( el_id ){
 
-                var dataSet,
-                    jsonDataSource = $('#' + el_id).attr('data-chartdata');
+            var dataSet,
+                jsonDataSource = $('#' + el_id).attr('data-chartdata');
 
-                var setData = function(){
+            var setData = function(){
 
-                    /**
-                     * Pass JSON data to be drawn into a pie chart div.
-                     *
-                     * @param data
-                     */
-                    function drawPieChart( data ) {
+                /**
+                 * Pass JSON data to be drawn into a pie chart div.
+                 *
+                 * @param data
+                 */
+                function drawPieChart( data ) {
 
-                        var colorArray = circleThroughColors(data.length),
-                            context = $( '#' + el_id.replace( 'Area','') ).get( 0 ).getContext( '2d' ),
-                            dataSet = [];
+                    var colorArray = circleThroughColors(data.length),
+                        context = $( '#' + el_id.replace( 'Area','') ).get( 0 ).getContext( '2d' ),
+                        dataSet = [];
 
-                        data.forEach( function( row, i ){
-                            var n = i + 1;
-                            dataSet.push( { value: row.count, color: colorArray[colorArray.length - n] } );
-                            $( '#' + el_id.replace('Area','') + 'Filter' ).append(
-                                $( '<div>' ).append(
-                                        $( '<div>' )
-                                            .addClass('legendicon')
-                                            .css( 'background-color', colorArray[colorArray.length - n])
-                                    ).append(
-                                        $( '<span>' ).text( '$' + row.bracket_max )
-                                    )
-                            );
+                    data.forEach( function( row, i ){
+                        var n = i + 1;
+                        dataSet.push( { value: row.count, color: colorArray[colorArray.length - n] } );
+                        $( '#' + el_id.replace('Area','') + 'Filter' ).append(
+                            $( '<div>' ).append(
+                                    $( '<div>' )
+                                        .addClass('legendicon')
+                                        .css( 'background-color', colorArray[colorArray.length - n])
+                                ).append(
+                                    $( '<span>' ).text( '$' + row.bracket_max )
+                                )
+                        );
 
-                        });
+                    });
 
-                        new Chart(context).Doughnut(dataSet);
-                    }
-
-                    drawPieChart(dataSet);
+                    new Chart(context).Doughnut(dataSet);
                 }
 
-                $.ajax({
-                    dataType: "json",
-                    url: jsonDataSource,
-                    success: function( returnedData ){
-                        dataSet = returnedData;
-                        setData();
-                    }
-                });
+                drawPieChart(dataSet);
+            }
 
+            $.ajax({
+                dataType: "json",
+                url: jsonDataSource,
+                success: function( returnedData ){
+                    dataSet = returnedData;
+                    setData();
+                }
             });
 
-        }
+        });
+
+        
 
     }
     if ($('.barArea').length || $('.lineArea').length) {
@@ -185,18 +184,17 @@
     }
     if ($('.mapArea').length) {
 
-        console.log("step 1");
         var ids = $.map($('.mapArea'), function(num){
             return num.id;
         });
 
         ids.forEach(function(el_id){
-            console.log("step 2");
-            var dataSet,
-                jsonDataSource = $('#' + el_id).attr('data-chartdata'),
+            
+            //var dataSet,
+                var jsonDataSource = $('#' + el_id).attr('data-chartdata');
                 
-                setData = function(){
-                    console.log("step 4");
+                setData = function( dataSet ){
+                    
                     var map = new Datamap({
 
                         element: document.getElementById(el_id),
@@ -217,7 +215,7 @@
 
                         geographyConfig: {
 
-                            dataUrl: null, 
+                            dataUrl: null,
                             hideAntarctica: true,
                             borderWidth: 1,
                             borderColor: '#FDFDFD',
@@ -240,9 +238,9 @@
                 dataType: 'json',
                 url: jsonDataSource,
                 success: function( returnedData ){
-                    console.log("step 3");
-                    dataSet = returnedData;
-                    setData();
+                    console.log("ajax");
+                    //dataSet = returnedData;
+                    setData( returnedData );
                 }
             });
 

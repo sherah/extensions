@@ -34,6 +34,7 @@
  * title: the title that will display at the top of this chart.
  *
  */
+
 class FundraisingChart {
 
     //TODO: use beforePageDisplay
@@ -59,14 +60,14 @@ class FundraisingChart {
     /**
      * Display charts
      *
-     * @param $input
-     * @param array $args
+     * @param $input : the value between the opening and closing tags (does not apply)
+     * @param array $args : array of tag arguments
      * @param Parser $parser
      * @param PPFrame $frame
      * @return string
      */
     static function frChartRender( $input, array $args, Parser $parser, PPFrame $frame ) {
-
+        syslog(LOG_INFO, 'the type of input is: ' . gettype($input));
         $parser->getOutput()->addModules('ext.fundraisingChart');
 
         if(isset($args['dataset'])){
