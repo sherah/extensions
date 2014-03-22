@@ -9,7 +9,6 @@
 
 //Define the global Chart Variable as a class.
 window.Chart = function(context){
-
 	var chart = this;
 	
 	

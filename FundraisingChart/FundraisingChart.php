@@ -14,29 +14,17 @@ $wgAutoloadClasses['FundraisingChart'] = $IP . '/extensions/FundraisingChart/fr_
 $wgHooks['ParserFirstCallInit'][] = 'FundraisingChart::onParserInit';
 
 $wgResourceModules['ext.fundraisingChart'] = array(
-	'styles'  => array('resources/css/style.css', 'ext.fundraisingChart.bootstrap/bootstrap.min.css'),
-    'scripts' => array('resources/js/chartFormatHelpers', 'resources/js/fundraising_charts.js'),
+	'styles'  => array('resources/css/style.css'),
+    'scripts' => array('resources/js/chartFormatHelpers.js', 'resources/js/fundraising_charts.js'),
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'FundraisingChart',
     'dependencies' => array('moment', 'ext.fundraisingChart.bootstrap', 
-        'ext.fundraisingChart.d3', 'ext.fundraisingChart.chartsjs',
-        'ext.fundraisingChart.topojson', 'ext.fundraisingChart.datamaps' )
-);
-
-$wgResourceModules['ext.fundraisingChart.chartFormatHelpers'] = array(
-    'scripts' => 'resources/js/chartFormatHelpers.js',
-    'localBasePath' => '__DIR__/resources',
-    'remoteExtPath' => 'FundraisingChart'
-);
-
-$wgResourceModules['ext.fundraisingChart.fundraising_charts'] = array(
-    'scripts' => 'resources/js/fundraising_charts.js',
-    'localBasePath' => '__DIR__/resources',
-    'remoteExtPath' => 'FundraisingChart'
+        'ext.fundraisingChart.d3','ext.fundraisingChart.topojson', 
+        'ext.fundraisingChart.datamaps', 'ext.fundraisingChart.chartsjs',)
 );
 
 $wgResourceModules['ext.fundraisingChart.bootstrap'] = array(
-    'styles' => 'modules/ext.fundraisingChart.bootstrap/bootstrap.min.css',
+    'styles' => 'modules/ext.fundraisingChart.bootstrap/bootstrap.css',
     'localBasePath' => __DIR__,
     'remoteExtPath' => 'FundraisingChart'
 );
@@ -61,7 +49,7 @@ $wgResourceModules['ext.fundraisingChart.datamaps'] = array(
 );
 
 $wgResourceModules['ext.fundraisingChart.chartsjs'] = array(
-    'scripts' => 'modules/ext.fundraisingChart.chartsJS/Chart.js',
+    'scripts' => 'modules/ext.fundraisingChart.chartsjs/Chart.js',
     'localBasePath' => __DIR__,
     'remoteExtPath' => 'FundraisingChart'
 );

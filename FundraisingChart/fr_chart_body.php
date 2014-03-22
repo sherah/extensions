@@ -36,6 +36,7 @@
  */
 class FundraisingChart {
 
+    //TODO: use beforePageDisplay
     static function onParserInit( Parser $parser ) {
         $parser->setHook( 'fundraisingChart', array(__CLASS__, 'frChartRender') );
     }
@@ -66,7 +67,7 @@ class FundraisingChart {
      */
     static function frChartRender( $input, array $args, Parser $parser, PPFrame $frame ) {
 
-        $parser -> getOutput()->addModules('ext.fundraisingChart');
+        $parser->getOutput()->addModules('ext.fundraisingChart');
 
         if(isset($args['dataset'])){
 

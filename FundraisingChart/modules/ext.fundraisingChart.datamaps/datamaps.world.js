@@ -3,7 +3,7 @@
     var defaultOptions = {
         scope: 'world',
         setProjection: setProjection,
-        projection: 'equirectangular',
+        projection: 'mercator',
         done: function() {},
         fills: {
             defaultFill: '#ABDDA4'
@@ -446,7 +446,7 @@
         if ( ! this.options.disableDefaultStyles ) {
             addStyleBlock();
         }
-
+        
         return this.draw();
     }
 

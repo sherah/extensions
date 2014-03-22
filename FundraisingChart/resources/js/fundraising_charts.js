@@ -185,60 +185,62 @@
     }
     if ($('.mapArea').length) {
 
+        console.log("step 1");
         var ids = $.map($('.mapArea'), function(num){
             return num.id;
         });
 
         ids.forEach(function(el_id){
-
+            console.log("step 2");
             var dataSet,
-                jsonDataSource = $('#' + el_id).attr('data-chartdata');
-
-            var setData = function(){
+                jsonDataSource = $('#' + el_id).attr('data-chartdata'),
                 
-                new Datamap({
+                setData = function(){
+                    console.log("step 4");
+                    var map = new Datamap({
 
-                    element: document.getElementById(el_id),
+                        element: document.getElementById(el_id),
 
-                    data: dataSet,
+                        data: dataSet,
 
-                    fills: {
-                        gray   : '#4D4D4D',
-                        blue   : '#5DA5DA',
-                        orange : '#FAA43A',
-                        green  : '#60BD68',
-                        pink   : '#F17CB0',
-                        brown  : '#B2912F',
-                        purple : '#B276B2',
-                        yellow : '#DECF3F',
-                        red    : '#F15854'
-                    },
-
-                    geographyConfig: {
-
-                        dataUrl: null, //if not null, ext.fundraisingChart.datamaps will fetch the map JSON (currently only supports ext.fundraisingChart.topojson)
-                        hideAntarctica: true,
-                        borderWidth: 1,
-                        borderColor: '#FDFDFD',
-                        popupOnHover: true,
-                        popupTemplate: function(geography, data) {
-                            return '<div class="hoverinfo"><strong>' + geography.properties.name + '</strong></div>';
+                        fills: {
+                            gray   : '#4D4D4D',
+                            blue   : '#5DA5DA',
+                            orange : '#FAA43A',
+                            green  : '#60BD68',
+                            pink   : '#F17CB0',
+                            brown  : '#B2912F',
+                            purple : '#B276B2',
+                            yellow : '#DECF3F',
+                            red    : '#F15854'
                         },
-                        highlightOnHover: true,
-                        highlightFillColor: '#F17CB0',
-                        highlightBorderColor: 'rgba(255,255,255,0.4)',
-                        highlightBorderWidth: 1
 
-                    }
+                        geographyConfig: {
 
-                });
-            }
+                            dataUrl: null, 
+                            hideAntarctica: true,
+                            borderWidth: 1,
+                            borderColor: '#FDFDFD',
+                            popupOnHover: true,
+                            popupTemplate: function(geography, data) {
+                                return '<div class="hoverinfo"><strong>' + geography.properties.name + '</strong></div>';
+                            },
+                            highlightOnHover: true,
+                            highlightFillColor: '#F17CB0',
+                            highlightBorderColor: 'rgba(255,255,255,0.4)',
+                            highlightBorderWidth: 1
+
+                        }
+
+                    });
+                };
 
             //ajax request to get the json data from frdata
             $.ajax({
-                dataType: "json",
+                dataType: 'json',
                 url: jsonDataSource,
                 success: function( returnedData ){
+                    console.log("step 3");
                     dataSet = returnedData;
                     setData();
                 }
